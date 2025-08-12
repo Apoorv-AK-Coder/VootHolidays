@@ -442,20 +442,87 @@ form {
 
 .Vootgallery {
     background-color: #f7f7f7;
+
     img {
         width: 100%;
     }
 
     .grid {
-        gap:15px;
+        gap: 15px;
     }
 }
 
-.text2 {
-    background-color: #f7f7f7;
+.vootdestinations {
+    .innercol {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(20, 20, 20, 0.2);
+        height: 250px;
+        display: grid;
+        align-items: end;
 
-    p {
-        font-size: 14px;
-        line-height: 1.5;
+        h3,
+        p {
+            color: var(--fourth-color) !important;
+        }
+    }
+
+    .innercol:hover {
+        p {
+            margin-left: 25px !important;
+            color: var(--primary-color) !important;
+        }
+    }
+}
+
+.vootroutes {
+    .innercol {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(20, 20, 20, 0.2);
+        height: 200px;
+        display: grid;
+        align-items: end;
+
+        h3 {
+            color: var(--fourth-color) !important;
+        }
+
+        hr {
+            border: 1px solid var(--primary-color);
+            flex: 1;
+            margin-block: auto;
+        }
+    }
+
+    .innercol:hover {
+        box-shadow: 0 0 5px 5px rgba(20, 20, 20, 0.2);
+    }
+}
+
+.vootpackages {
+    background-color: #FCEAEA;
+}
+
+.vootnewsletter {
+    background-image: url(../images/home-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    form {
+        display: flex;
+        gap: 10px;
+
+        button {
+            margin: auto 0;
+            width: fit-content;
+        }
     }
 }
