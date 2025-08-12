@@ -35,7 +35,7 @@
 
         .newhead {
             width: 100% !important;
-            padding: 15px 20px;
+            padding: 0 20px;
 
             .icon {
                 margin: auto 0;
@@ -44,7 +44,7 @@
 
             .left {
                 img {
-                    width: 125px;
+                    width: 100px;
                 }
             }
         }
@@ -52,6 +52,16 @@
         .right {
             justify-content: center;
             flex: 1;
+        }
+    }
+
+    .newheader.scrolled {
+        a {
+            color: #141414 !important;
+        }
+
+        #on {
+            color: var(--fourth-color);
         }
     }
 
@@ -94,7 +104,7 @@
     }
 
     #on {
-        color: var(--fourth-color);
+        color: var(--fifth-color);
         max-width: 30px;
     }
 
@@ -122,12 +132,16 @@
             line-height: 1.5;
         }
     }
-    
+
     .grid1,
     .grid2,
     .grid3 {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+    }
+
+    .usps {
+        text-align: left;
     }
 }
 
@@ -153,6 +167,28 @@
     .newfooter {
         .grid {
             grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .newheader {
+        .right {
+            a {
+                font-size: 13px;
+            }
+        }
+
+        .newhead {
+            .left {
+                img {
+                    width: 80px;
+                }
+            }
+        }
+    }
+
+    .VootBanner {
+        .row {
+            padding-top: 90px;
         }
     }
 }
