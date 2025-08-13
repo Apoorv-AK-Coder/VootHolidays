@@ -190,5 +190,9 @@
         .row {
             padding-top: 90px;
         }
+
+        #pass-info {
+            justify-content: left !important;
+        }
     }
 }
