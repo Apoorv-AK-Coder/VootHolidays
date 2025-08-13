@@ -56,6 +56,10 @@
     a {
         color: var(--fourth-color) !important;
     }
+
+    .right a {
+        color: #141414 !important;
+    }
 }
 
 .navigate {
@@ -632,7 +636,7 @@ form {
                 text-align: center;
 
                 p {
-                    line-height: 1.7;
+                    line-height: 1.5;
                     font-size: 12px;
                 }
             }
@@ -646,7 +650,7 @@ form {
             }
 
             hr {
-                margin-block: 5px;
+                margin-block: 0;
             }
         }
     }
