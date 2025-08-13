@@ -462,8 +462,6 @@ form {
 }
 
 .Vootgallery {
-    background-color: #f7f7f7;
-
     img {
         width: 100%;
     }
@@ -496,6 +494,10 @@ form {
             margin-left: 25px !important;
             color: var(--primary-color) !important;
         }
+    }
+
+    .row {
+        padding-top: 0;
     }
 }
 
@@ -563,6 +565,89 @@ form {
         button {
             margin: auto 0;
             width: fit-content;
+        }
+    }
+}
+
+.vootticketbook {
+    background-color: #f7f7f7;
+
+    .innerrow {
+        .column {
+            border-radius: 5px;
+            box-shadow: 0 0 2px 2px rgba(20, 20, 20, 0.1);
+            padding: 15px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            grid-template-columns: repeat(4, 1fr);
+            display: grid;
+            gap: 10px;
+        }
+
+        button {
+            background-color: transparent;
+            border: 1.5px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .column:hover {
+            border-color: var(--primary-color);
+
+            button {
+                background-color: var(--primary-color);
+                color: var(--fourth-color);
+            }
+        }
+
+        .contentcol {
+            grid-column: span 3;
+            border-right: 2px solid #cacaca;
+            padding-right: 10px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        img {
+            width: 20px;
+        }
+
+        .flighthead {
+            p:first-child {
+                flex: 1;
+            }
+
+            p:last-child {
+                background-color: var(--fifth-color);
+                color: var(--fourth-color);
+                padding-inline: 10px;
+                border-radius: 25px;
+            }
+        }
+
+        .flex {
+            div:nth-child(2) {
+                flex: 1;
+                text-align: center;
+
+                p {
+                    line-height: 1.7;
+                    font-size: 12px;
+                }
+            }
+
+            div:last-child {
+                text-align: right;
+            }
+
+            div {
+                margin: auto 0;
+            }
+
+            hr {
+                margin-block: 5px;
+            }
         }
     }
 }

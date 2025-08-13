@@ -58,172 +58,166 @@
             <div class="row">
                 <div class="column mainformcol">
                     <h1>The Best Travel Experiences Await You!</h1>
-                        <form action="/home/_searchenginehome" method="post" id="onflight">
-                            <div class="column radio flex">
-                                <div>
-                                    <input name="return" type="radio" value="Return" id="return" checked="checked"
-                                        class="slct_btn rndtrp trpact" style="margin-top: 5px !important;" />
-                                    <label for="return"><span><span></span></span>Round Trip</label>
+                    <form action="/home/_searchenginehome" method="post" id="onflight">
+                        <div class="column radio flex">
+                            <div>
+                                <input name="return" type="radio" value="Return" id="return" checked="checked"
+                                    class="slct_btn rndtrp trpact" style="margin-top: 5px !important;" />
+                                <label for="return"><span><span></span></span>Round Trip</label>
+                            </div>
+                            <div>
+                                <input name="return" type="radio" value="OneWay" class="slct_btn onwtrp" id="oneway"
+                                    style="margin-top: 5px !important;" />
+                                <label for="oneway"><span><span></span></span>One Way</label>
+                            </div>
+                        </div>
+
+                        <div class="col3 grid">
+                            <div class="column grid grid3">
+                                <div class="labelcol">
+                                    <label for="">Depart From</label>
+                                    <input name="flying_from" type="text" placeholder="New Delhi (DEL)" id="flying_from"
+                                        onchange="checkdata();" onclick="this.select();" class="location" />
                                 </div>
-                                <div>
-                                    <input name="return" type="radio" value="OneWay" class="slct_btn onwtrp" id="oneway"
-                                        style="margin-top: 5px !important;" />
-                                    <label for="oneway"><span><span></span></span>One Way</label>
+                                <div class="labelcol">
+                                    <label for="">Going To</label>
+                                    <input name="flying_to" type="text" placeholder="Mumbai (BOM)" id="flying_to"
+                                        onchange="checkdata1();" onclick="this.select();" class="location1" />
+                                </div>
+                                <div class="labelcol">
+                                    <label for="">Depart Date</label>
+                                    <input autocomplete="off" class="cal calendar mid-dspc-lt" data-val="true"
+                                        data-val-required="Please Select Depart Date" id="from" name="from"
+                                        onclick="this.focus(); this.setSelectionRange(0, 9999);" placeholder="Depart"
+                                        readonly style="cursor:pointer" type="text" value="" />
+                                </div>
+                                <div class="labelcol">
+                                    <label for="">Return Date</label>
+                                    <input autocomplete="off" class="pad-left calendar1 return" data-val="true"
+                                        data-val-required="Please Select Return Date" id="to" name="to"
+                                        onclick="this.focus(); this.setSelectionRange(0, 9999);" placeholder="Return"
+                                        readonly style="cursor:pointer" type="text" value="" />
                                 </div>
                             </div>
 
-                            <div class="col3 grid">
-                                <div class="column grid grid3">
-                                    <div class="labelcol">
-                                        <label for="">Depart From</label>
-                                        <input name="flying_from" type="text" placeholder="New Delhi (DEL)"
-                                            id="flying_from" onchange="checkdata();" onclick="this.select();"
-                                            class="location" />
-                                    </div>
-                                    <div class="labelcol">
-                                        <label for="">Going To</label>
-                                        <input name="flying_to" type="text" placeholder="Mumbai (BOM)" id="flying_to"
-                                            onchange="checkdata1();" onclick="this.select();" class="location1" />
-                                    </div>
-                                    <div class="labelcol">
-                                        <label for="">Depart Date</label>
-                                        <input autocomplete="off" class="cal calendar mid-dspc-lt" data-val="true"
-                                            data-val-required="Please Select Depart Date" id="from" name="from"
-                                            onclick="this.focus(); this.setSelectionRange(0, 9999);"
-                                            placeholder="Depart" readonly style="cursor:pointer" type="text" value="" />
-                                    </div>
-                                    <div class="labelcol">
-                                        <label for="">Return Date</label>
-                                        <input autocomplete="off" class="pad-left calendar1 return" data-val="true"
-                                            data-val-required="Please Select Return Date" id="to" name="to"
-                                            onclick="this.focus(); this.setSelectionRange(0, 9999);"
-                                            placeholder="Return" readonly style="cursor:pointer" type="text" value="" />
-                                    </div>
-                                </div>
-
-                                <div class="column d-flex">
-                                    <div class="labelcol" id="pass-info">
-                                        <div class="dropdown-container">
-                                            <div class="form_full">
-                                                <div class="form-group">
-                                                    <div id="divPaxInfo" data-toggle="collapse"
-                                                        data-target="#divPaxInfo_Fight1"
-                                                        class="form-control f-traveller collapsed"
-                                                        aria-expanded="false">
-                                                        <span id="spanTotalPax_Flight" class="user">1 Traveller,
-                                                            Economy</span>
-                                                    </div>
+                            <div class="column d-flex">
+                                <div class="labelcol" id="pass-info">
+                                    <div class="dropdown-container">
+                                        <div class="form_full">
+                                            <div class="form-group">
+                                                <div id="divPaxInfo" data-toggle="collapse"
+                                                    data-target="#divPaxInfo_Fight1"
+                                                    class="form-control f-traveller collapsed" aria-expanded="false">
+                                                    <span id="spanTotalPax_Flight" class="user">1 Traveller,
+                                                        Economy</span>
                                                 </div>
                                             </div>
-                                            <div id="divPaxInfo_Fight1" class="adult-class-dropdown flight-pax collapse"
-                                                style="position: absolute; height: 0px;" aria-expanded="false">
-                                                <div class="dropdown-content" id="divFlightRoom1">
-                                                    <div class="form-group">
-                                                        <label>Cabin Class:</label>
-                                                        <select id="CabinClass" name="CabinClass" class="form-control"
-                                                            onclick="getPassenger()" style="color: #141414;">
-                                                            <option value="Y">Economy</option>
-                                                            <option value="W">Premium Eco</option>
-                                                            <option value="C">Business</option>
-                                                            <option value="F">First Class</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="adult-panel">
-                                                        <div class="min-max-outer">
-                                                            <span class="age-text">Adult(s)</span>
-                                                            <div class="min-max">
-                                                                <input class="input-btn1 qtyminus" value="-"
-                                                                    id="mins_adt" type="button" field='quantity'>
-                                                                <input Value="1" class="input-text" data-val="true"
-                                                                    data-val-number="The field Adult must be a number."
-                                                                    data-val-required="The Adult field is required."
-                                                                    field="quantity" id="Adult" name="Adult" readonly
-                                                                    type="text" value=""
-                                                                    style="padding: 5px;margin: 0;" />
-                                                                <input class="input-btn2 qtyplus" value="+"
-                                                                    id="plus_adt" type="button" field='quantity'>
-                                                            </div>
+                                        </div>
+                                        <div id="divPaxInfo_Fight1" class="adult-class-dropdown flight-pax collapse"
+                                            style="position: absolute; height: 0px;" aria-expanded="false">
+                                            <div class="dropdown-content" id="divFlightRoom1">
+                                                <div class="form-group">
+                                                    <label>Cabin Class:</label>
+                                                    <select id="CabinClass" name="CabinClass" class="form-control"
+                                                        onclick="getPassenger()" style="color: #141414;">
+                                                        <option value="Y">Economy</option>
+                                                        <option value="W">Premium Eco</option>
+                                                        <option value="C">Business</option>
+                                                        <option value="F">First Class</option>
+                                                    </select>
+                                                </div>
+                                                <div class="adult-panel">
+                                                    <div class="min-max-outer">
+                                                        <span class="age-text">Adult(s)</span>
+                                                        <div class="min-max">
+                                                            <input class="input-btn1 qtyminus" value="-" id="mins_adt"
+                                                                type="button" field='quantity'>
+                                                            <input Value="1" class="input-text" data-val="true"
+                                                                data-val-number="The field Adult must be a number."
+                                                                data-val-required="The Adult field is required."
+                                                                field="quantity" id="Adult" name="Adult" readonly
+                                                                type="text" value="" style="padding: 5px;margin: 0;" />
+                                                            <input class="input-btn2 qtyplus" value="+" id="plus_adt"
+                                                                type="button" field='quantity'>
                                                         </div>
                                                     </div>
-                                                    <div class="adult-panel">
-                                                        <div class="min-max-outer">
-                                                            <span class="age-text">Child(ren)</span>
-                                                            <div class="min-max">
-                                                                <input class="input-btn1 qtyminus" data-field="Children"
-                                                                    value="-" id="mins_chd" type="button"
-                                                                    field='quantity'>
-                                                                <input Value="0" class="input-text" data-val="true"
-                                                                    data-val-number="The field Children must be a number."
-                                                                    data-val-required="The Children field is required."
-                                                                    field="quantity" id="Children" name="Children"
-                                                                    readonly type="text" value=""
-                                                                    style="padding: 5px;margin: 0;" />
-                                                                <input class="input-btn2 qtyplus" data-field="Children"
-                                                                    value="+" id="plus_chd" type="button"
-                                                                    field='quantity'>
-                                                            </div>
+                                                </div>
+                                                <div class="adult-panel">
+                                                    <div class="min-max-outer">
+                                                        <span class="age-text">Child(ren)</span>
+                                                        <div class="min-max">
+                                                            <input class="input-btn1 qtyminus" data-field="Children"
+                                                                value="-" id="mins_chd" type="button" field='quantity'>
+                                                            <input Value="0" class="input-text" data-val="true"
+                                                                data-val-number="The field Children must be a number."
+                                                                data-val-required="The Children field is required."
+                                                                field="quantity" id="Children" name="Children" readonly
+                                                                type="text" value="" style="padding: 5px;margin: 0;" />
+                                                            <input class="input-btn2 qtyplus" data-field="Children"
+                                                                value="+" id="plus_chd" type="button" field='quantity'>
                                                         </div>
                                                     </div>
-                                                    <div class="adult-panel">
-                                                        <div class="min-max-outer">
-                                                            <span class="age-text">Infant(s)</span>
-                                                            <div class="min-max">
-                                                                <input class="input-btn1 qtyminus" value="-"
-                                                                    id="mins_inf" type="button" field='quantity'>
-                                                                <input Value="0" class="input-text" data-val="true"
-                                                                    data-val-number="The field Infant must be a number."
-                                                                    data-val-required="The Infant field is required."
-                                                                    field="quantity" id="Infant" name="Infant" readonly
-                                                                    type="text" value=""
-                                                                    style="padding: 5px;margin: 0;" />
-                                                                <input class="input-btn2 qtyplus" value="+"
-                                                                    id="plus_inf" type="button" field='quantity'>
-                                                            </div>
+                                                </div>
+                                                <div class="adult-panel">
+                                                    <div class="min-max-outer">
+                                                        <span class="age-text">Infant(s)</span>
+                                                        <div class="min-max">
+                                                            <input class="input-btn1 qtyminus" value="-" id="mins_inf"
+                                                                type="button" field='quantity'>
+                                                            <input Value="0" class="input-text" data-val="true"
+                                                                data-val-number="The field Infant must be a number."
+                                                                data-val-required="The Infant field is required."
+                                                                field="quantity" id="Infant" name="Infant" readonly
+                                                                type="text" value="" style="padding: 5px;margin: 0;" />
+                                                            <input class="input-btn2 qtyplus" value="+" id="plus_inf"
+                                                                type="button" field='quantity'>
                                                         </div>
                                                     </div>
-                                                    <div class="done-btn-full">
-                                                        <a href="javascript:void(0);" class="done-btn"
-                                                            id="prsn_done">Done</a>
-                                                    </div>
+                                                </div>
+                                                <div class="done-btn-full">
+                                                    <a href="javascript:void(0);" class="done-btn"
+                                                        id="prsn_done">Done</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <button class="button" type="submit" id="flight_submit" name="flight_submit"
-                                        onclick="return CheckValidation();"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
                                 </div>
-                            </div>
 
-                            <div class="clearfix"></div>
-                            <input id="hdn_MultiCityFrom" name="MultiCityFrom" type="hidden" value="" />
-                            <input id="hdn_MultiCityTo" name="MultiCityTo" type="hidden" value="" />
-                            <input id="hdn_MultiCitydate" name="MultiCitydate" type="hidden" value="" />
-                            <input id="hdn_ClassTypeName" name="ClassTypeName" type="hidden" value="" />
-                            <div id="dvNLMessage_FS" class="searchpop12_FS" style="display: none; top: 0; left: 0;"
-                                onclick="NLMessageClose_FS();">
-                                <div class="searchpopinner2_FS searchpopinner12_FS">
-                                    <div style="float: right">Close(X)</div>
-                                    <br />
-                                    <br />
-                                    <h3>Sorry! This e-mail id is already registered for our newsletter.</h3>
-                                    <div class="searcpoprow2_FS">
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
+                                <button class="button" type="submit" id="flight_submit" name="flight_submit"
+                                    onclick="return CheckValidation();"><i class="fa-solid fa-magnifying-glass"></i>
+                                    Search</button>
                             </div>
-                            <input type="hidden" id="hfTripType" name="hfTripType" value=>
-                            <input type="hidden" id="hfFromDestination" name="hfFromDestination" value="">
-                            <input type="hidden" id="hfToDestination" name="hfToDestination" value="">
-                            <input type="hidden" id="hfFromDate" name="hfFromDate" value=>
-                            <input type="hidden" id="hfToDate" name="hfToDate" value=>
-                            <input type="hidden" id="hfAdult" name="hfAdult" value=>
-                            <input type="hidden" id="hfChild" name="hfChild" value="0">
-                            <input type="hidden" id="hfInfant" name="hfInfant" value="0">
-                            <input type="hidden" id="hfflex" value="false" name="hfflex" />
-                            <input type="hidden" id="hfdirect" value="false" name="hfdirect" />
-                            <input type="hidden" id="hfcontact" value="false" name="hfcontact" />
-                        </form>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <input id="hdn_MultiCityFrom" name="MultiCityFrom" type="hidden" value="" />
+                        <input id="hdn_MultiCityTo" name="MultiCityTo" type="hidden" value="" />
+                        <input id="hdn_MultiCitydate" name="MultiCitydate" type="hidden" value="" />
+                        <input id="hdn_ClassTypeName" name="ClassTypeName" type="hidden" value="" />
+                        <div id="dvNLMessage_FS" class="searchpop12_FS" style="display: none; top: 0; left: 0;"
+                            onclick="NLMessageClose_FS();">
+                            <div class="searchpopinner2_FS searchpopinner12_FS">
+                                <div style="float: right">Close(X)</div>
+                                <br />
+                                <br />
+                                <h3>Sorry! This e-mail id is already registered for our newsletter.</h3>
+                                <div class="searcpoprow2_FS">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="hfTripType" name="hfTripType" value=>
+                        <input type="hidden" id="hfFromDestination" name="hfFromDestination" value="">
+                        <input type="hidden" id="hfToDestination" name="hfToDestination" value="">
+                        <input type="hidden" id="hfFromDate" name="hfFromDate" value=>
+                        <input type="hidden" id="hfToDate" name="hfToDate" value=>
+                        <input type="hidden" id="hfAdult" name="hfAdult" value=>
+                        <input type="hidden" id="hfChild" name="hfChild" value="0">
+                        <input type="hidden" id="hfInfant" name="hfInfant" value="0">
+                        <input type="hidden" id="hfflex" value="false" name="hfflex" />
+                        <input type="hidden" id="hfdirect" value="false" name="hfdirect" />
+                        <input type="hidden" id="hfcontact" value="false" name="hfcontact" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -235,6 +229,123 @@
             <h4><i class="fa-solid fa-medal"></i> &nbsp; Quality Assured</h4>
             <h4><i class="fa-solid fa-shield-halved"></i> &nbsp; TTA & ATOL Protected</h4>
             <h4><i class="fa-solid fa-table-cells-row-lock"></i> &nbsp; Easy & Secure Bookings</h4>
+        </div>
+    </div>
+
+    <div class="container vootticketbook">
+        <div class="row">
+            <div class="column">
+                <h2>Book Ticket</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+                <br>
+                <div class="innerrow grid grid1">
+                    <a href="">
+                        <div class="column">
+                            <div class="contentcol">
+                                <div class="flex flighthead">
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                    <p>Round Trip</p>
+                                </div>
+                                <div class="flex gap2">
+                                    <div>
+                                        <h3>JFK</h3>
+                                        <p>New York</p>
+                                    </div>
+                                    <div>
+                                        <p>Economy</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h3>BLR</h3>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button">USD <br> 625</button>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="column">
+                            <div class="contentcol">
+                                <div class="flex flighthead">
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                    <p>Round Trip</p>
+                                </div>
+                                <div class="flex gap2">
+                                    <div>
+                                        <h3>JFK</h3>
+                                        <p>New York</p>
+                                    </div>
+                                    <div>
+                                        <p>Economy</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h3>BLR</h3>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button">USD <br> 625</button>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="column">
+                            <div class="contentcol">
+                                <div class="flex flighthead">
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                    <p>Round Trip</p>
+                                </div>
+                                <div class="flex gap2">
+                                    <div>
+                                        <h3>JFK</h3>
+                                        <p>New York</p>
+                                    </div>
+                                    <div>
+                                        <p>Economy</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h3>BLR</h3>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button">USD <br> 625</button>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="column">
+                            <div class="contentcol">
+                                <div class="flex flighthead">
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                    <p>Round Trip</p>
+                                </div>
+                                <div class="flex gap2">
+                                    <div>
+                                        <h3>JFK</h3>
+                                        <p>New York</p>
+                                    </div>
+                                    <div>
+                                        <p>Economy</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h3>BLR</h3>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button">USD <br> 625</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -255,44 +366,53 @@
         <div class="row">
             <div class="column">
                 <h2>Exclusive Deals For Top Destinations</h2>
-                <p>Fares mentioned on our website are for a round-trip and include all the taxes with fuel surcharge, service fee and tax. These fares are mentioned on the basis of historical data and cannot be guaranteed. Please go through all the <a href="https://vootholidays.com/terms-condition">terms and conditions</a>.</p>
+                <p>Fares mentioned on our website are for a round-trip and include all the taxes with fuel surcharge,
+                    service fee and tax. These fares are mentioned on the basis of historical data and cannot be
+                    guaranteed. Please go through all the <a href="https://vootholidays.com/terms-condition">terms and
+                        conditions</a>.</p>
                 <br>
                 <div class="grid grid2">
                     <a href="https://www.vootholidays.com/cheap-flights-to-goa">
-                        <div class="innercol" style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
-                        <h3>Goa</h3>
-                        <p>Read More <i class="fa-solid fa-angles-right"></i></p>
-                    </div>
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
+                            <h3>Goa</h3>
+                            <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                        </div>
                     </a>
                     <a href="">
-                        <div class="innercol" style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
-                        <h3>Agra, Uttar Pradesh</h3>
-                        <p>Read More <i class="fa-solid fa-angles-right"></i></p>
-                    </div>
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url();">
+                            <h3>Agra, Uttar Pradesh</h3>
+                            <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                        </div>
                     </a>
                     <a href="">
-                        <div class="innercol" style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
-                        <h3>Delhi</h3>
-                        <p>Read More <i class="fa-solid fa-angles-right"></i></p>
-                    </div>
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url();">
+                            <h3>Delhi</h3>
+                            <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                        </div>
                     </a>
                     <a href="">
-                        <div class="innercol" style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
-                        <h3>Darjeeling, West Bengal</h3>
-                        <p>Read More <i class="fa-solid fa-angles-right"></i></p>
-                    </div>
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url();">
+                            <h3>Darjeeling, West Bengal</h3>
+                            <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                        </div>
                     </a>
                     <a href="">
-                        <div class="innercol" style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(https://vootholidays.com/vacations/images/rajasthan.jpg);">
-                        <h3>Jaisalmer, Rajasthan</h3>
-                        <p>Read More <i class="fa-solid fa-angles-right"></i></p>
-                    </div>
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url();">
+                            <h3>Jaisalmer, Rajasthan</h3>
+                            <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                        </div>
                     </a>
                     <a href="">
-                        <div class="innercol" style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(https://vootholidays.com/vacations/images/kerla.jpg);">
-                        <h3>Kerala</h3>
-                        <p>Read More <i class="fa-solid fa-angles-right"></i></p>
-                    </div>
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/kerla.jpg);">
+                            <h3>Kerala</h3>
+                            <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -321,7 +441,8 @@
                 <br>
                 <div class="grid grid2">
                     <a href="https://www.vootholidays.com/delhi-to-mumbai-flights">
-                        <div class="innercol" style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url();">
                             <div class="flex gap3">
                                 <h3><i class="fa-solid fa-plane-departure"></i> Delhi</h3>
                                 <hr>
@@ -330,7 +451,8 @@
                         </div>
                     </a>
                     <a href="https://www.vootholidays.com/mumbai-to-bengaluru-flights">
-                        <div class="innercol" style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(https://vootholidays.com/vacations/images/rajasthan.jpg);">
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url();">
                             <div class="flex gap3">
                                 <h3><i class="fa-solid fa-plane-departure"></i> Mumbai</h3>
                                 <hr>
@@ -339,7 +461,8 @@
                         </div>
                     </a>
                     <a href="https://www.vootholidays.com/delhi-to-srinagar-flights">
-                        <div class="innercol" style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(https://vootholidays.com/vacations/images/kerla.jpg);">
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url();">
                             <div class="flex gap3">
                                 <h3><i class="fa-solid fa-plane-departure"></i> Delhi</h3>
                                 <hr>
@@ -348,7 +471,8 @@
                         </div>
                     </a>
                     <a href="https://www.vootholidays.com/delhi-to-kolkata-flights">
-                        <div class="innercol" style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(https://vootholidays.com/vacations/images/kerla.jpg);">
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url();">
                             <div class="flex gap3">
                                 <h3><i class="fa-solid fa-plane-departure"></i> Delhi</h3>
                                 <hr>
@@ -357,7 +481,8 @@
                         </div>
                     </a>
                     <a href="https://www.vootholidays.com/delhi-to-hyderabad-flights">
-                        <div class="innercol" style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url();">
                             <div class="flex gap3">
                                 <h3><i class="fa-solid fa-plane-departure"></i> Delhi</h3>
                                 <hr>
@@ -366,7 +491,8 @@
                         </div>
                     </a>
                     <a href="https://www.vootholidays.com/delhi-to-ayodhya-flights">
-                        <div class="innercol" style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(https://vootholidays.com/vacations/images/rajasthan.jpg);">
+                        <div class="innercol"
+                            style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url();">
                             <div class="flex gap3">
                                 <h3><i class="fa-solid fa-plane-departure"></i> Delhi</h3>
                                 <hr>
@@ -387,7 +513,7 @@
                 <div class="grid grid2">
                     <a href="https://www.vootholidays.com/lakshadweep-tour-packages">
                         <div class="innercol">
-                            <img src="https://vootholidays.com/vacations/images/kerla.jpg" alt="">
+                            <img src="./images/" alt="">
                             <div class="flex">
                                 <h3><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Lakshadweep</h3>
                                 <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b></p>
@@ -396,7 +522,7 @@
                     </a>
                     <a href="https://www.vootholidays.com/ladakh-tour-packages">
                         <div class="innercol">
-                            <img src="https://vootholidays.com/vacations/images/kerla.jpg" alt="">
+                            <img src="./images/" alt="">
                             <div class="flex">
                                 <h3><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Ladakh</h3>
                                 <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b></p>
@@ -405,7 +531,7 @@
                     </a>
                     <a href="https://www.vootholidays.com/darjeeling-tour-packages">
                         <div class="innercol">
-                            <img src="https://vootholidays.com/vacations/images/kerla.jpg" alt="">
+                            <img src="./images/" alt="">
                             <div class="flex">
                                 <h3><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Darjeeling</h3>
                                 <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b></p>
@@ -414,7 +540,7 @@
                     </a>
                     <a href="https://www.vootholidays.com/andaman-tour-packages">
                         <div class="innercol">
-                            <img src="https://vootholidays.com/vacations/images/kerla.jpg" alt="">
+                            <img src="./images/andman.jpg" alt="">
                             <div class="flex">
                                 <h3><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Andaman</h3>
                                 <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b></p>
@@ -423,7 +549,7 @@
                     </a>
                     <a href="https://www.vootholidays.com/north-east-tour-packages">
                         <div class="innercol">
-                            <img src="https://vootholidays.com/vacations/images/kerla.jpg" alt="">
+                            <img src="./images/north-east.jpg" alt="">
                             <div class="flex">
                                 <h3><i class="fa-solid fa-umbrella-beach"></i>&nbsp; North East</h3>
                                 <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b></p>
@@ -432,7 +558,7 @@
                     </a>
                     <a href="https://www.vootholidays.com/ayodhya-tour-packages">
                         <div class="innercol">
-                            <img src="https://vootholidays.com/vacations/images/kerla.jpg" alt="">
+                            <img src="./images/" alt="">
                             <div class="flex">
                                 <h3><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Ayodhya</h3>
                                 <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b></p>
@@ -462,11 +588,11 @@
                 <div class="column">
                     <a href="/"><img src="./images/logo.png" alt=""></a>
                     <br><br>
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
                 </div>
                 <div class="column">
                     <h4>LEGAL</h4>
@@ -482,14 +608,22 @@
                 </div>
                 <div class="column">
                     <h4>Reach Us</h4>
-                    <a href="tel:+919582828275"><p><i class="fa-solid fa-phone-volume"></i> +91-9582828275</p></a>
-                    <a href="mailto:support@vootholidays.com"><p><i class="fa-solid fa-at"></i> support@vootholidays.com</p></a>
-                    <a href="mailto:info@vootholidays.com"><p><i class="fa-solid fa-envelope-open-text"></i> info@vootholidays.com</p></a>
+                    <a href="tel:+919582828275">
+                        <p><i class="fa-solid fa-phone-volume"></i> +91-9582828275</p>
+                    </a>
+                    <a href="mailto:support@vootholidays.com">
+                        <p><i class="fa-solid fa-at"></i> support@vootholidays.com</p>
+                    </a>
+                    <a href="mailto:info@vootholidays.com">
+                        <p><i class="fa-solid fa-envelope-open-text"></i> info@vootholidays.com</p>
+                    </a>
                     <p>24 x 7 Support</p>
                 </div>
             </div>
             <hr style="border-color: var(--primary-color);">
-            <p style="font-size: 13px !important;line-height: 1.5;">*Airline offers are based on up to 40% discount on the published airfares. The availability varies depending upon the destination, time of booking, blackout dates and Terms & Conditions. For certain airlines, offer may not be applicable.</p>
+            <p style="font-size: 13px !important;line-height: 1.5;">*Airline offers are based on up to 40% discount on
+                the published airfares. The availability varies depending upon the destination, time of booking,
+                blackout dates and Terms & Conditions. For certain airlines, offer may not be applicable.</p>
         </div>
         <hr style="margin: 0;">
         <div style="text-align:center;">
