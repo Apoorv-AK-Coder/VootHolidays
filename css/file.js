@@ -29,9 +29,26 @@ navLinks.forEach(link => {
 
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.newheader');
-  if (window.scrollY > 100) { // Adjust the threshold as needed
+  if (window.scrollY > 100) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
   }
+});
+
+document.querySelectorAll('.faqhead').forEach(head => {
+  head.addEventListener('click', () => {
+    const detail = head.nextElementSibling;
+    const plusIcon = head.querySelector('.fa-angle-down');
+    const minusIcon = head.querySelector('.fa-angle-up');
+
+    detail.classList.toggle('show');
+    if (detail.classList.contains('show')) {
+      plusIcon.style.display = 'none';
+      minusIcon.style.display = 'inline';
+    } else {
+      plusIcon.style.display = 'inline';
+      minusIcon.style.display = 'none';
+    }
+  });
 });
