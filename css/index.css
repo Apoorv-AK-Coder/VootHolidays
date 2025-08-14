@@ -404,16 +404,6 @@ form {
     }
 }
 
-.Vootgallery {
-    img {
-        width: 100%;
-    }
-
-    .grid {
-        gap: 15px;
-    }
-}
-
 .vootdestinations {
     .innercol {
         background-size: cover;
@@ -437,10 +427,6 @@ form {
             margin-left: 25px !important;
             color: var(--primary-color) !important;
         }
-    }
-
-    .row {
-        padding-top: 0;
     }
 }
 
@@ -652,7 +638,7 @@ form {
         background-color: var(--fourth-color);
         border-radius: 5px;
         border: 1px solid var(--primary-color);
-
+        margin-top: 10px;
 
         div:nth-child(even) {
             border-block: 1px solid var(--primary-color);
