@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <title>Explore Your Holiday with Flight Deals – VootHolidays</title>
+    <meta name="DESCRIPTION"
+        content="Plan your holiday with VootHolidays by selecting the best deals and managing your reservations with the most affordable offers." />
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/responsive.css" rel="stylesheet">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link href="./fontawesome/css/all.min.css" rel="stylesheet">
+
+    <link href="/Content/flcss/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/flcss/home.css" rel="stylesheet" />
+    <link href="/Content/flcss/styles.css" rel="stylesheet" />
+    <link href="/Content/flcss/inner.css" rel="stylesheet" />
+    <link href="/Content/flcss/animated.css" rel="stylesheet" />
+    <link href="/Content/flcss/common.css" rel="stylesheet" />
+    <link href="/Content/flcss/style_result.css" rel="stylesheet" />
+    <link href="/Content/flcss/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/Content/flcss/owl.theme.default.css" rel="stylesheet" />
+    <link href="/Content/flcss/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/flcss/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+    <script src="/Content/fljs/jquery-3.7.0.min.js"></script>
+    <script src="/Content/fljs/jquery-ui.min.js"></script>
+    <script src="/Content/fljs/bootstrap.min.js"></script>
+    <script src="/Content/fljs/owl.carousel.min.js"></script>
+    <script src="/Content/fljs/owl.carousel.js"></script>
+    <script src="/Content/fljs/script.js"></script>
+    <link href="/Content/searchAirport.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="newheader" id="newheader">
+        <div class="newhead">
+            <div class="flex">
+                <div class="column left">
+                    <a href="/">
+                        <img src="./images/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="column navigate" id="view">
+                    <div id="off">
+                        <i class="fa-solid fa-xmark" style="margin-bottom: 30px !important;"></i>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact-us">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="right flex">
+                    <p><a href="tel:+919582828275">+91-9582828275</a></p>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div class="column icon" id="on">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container VootBanner">
+        <div class="innervootbg">
+            <div class="row">
+                <div class="column mainformcol">
+                    <h1>Your Travel Footprints, Now Affordable, Choose VootHolidays</h1>
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="openTab(0)">Flight</button>
+                        <button class="tab-btn" onclick="openTab(1)">Hotels</button>
+                        <button class="tab-btn" onclick="openTab(2)">Car</button>
+                        <button class="tab-btn" onclick="openTab(3)">Bus</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-panel active">
+                            <form action="/Home/_SearchEngineHome" method="post">
+                                <div class="column radio">
+                                    <div>
+                                        <input name="flight_way" type="radio" id="rdoRoundtrip" checked="" value="2"
+                                            class="flight_way slct_btn onwtrp">
+                                        <label for="rdoRoundtrip"><span><span></span></span>Round Trip</label>
+                                    </div>
+                                    <div>
+                                        <input name="flight_way" type="radio" value="1" id="rdoOneway"
+                                            class="flight_way slct_btn rndtrp trpact">
+                                        <label for="rdoOneway"><span><span></span></span>One Way</label>
+                                    </div>
+                                </div>
+                                <div class="col3 grid grid2">
+                                    <div class="grid grid1">
+                                        <div class="autocomplete-wrapper">
+                                            <label for="">Depart From</label>
+                                            <input name="flight_from" type="text"
+                                            placeholder="Origin" id="flight_from" onchange="checkdata();"
+                                            onclick="this.select();"
+                                            class="autocomplete_from autocomplete_from_new location">
+                                            <div class="autocomplete-results"></div>
+                                        </div>
+                                        <div class="autocomplete-wrapper">
+                                            <label for="">Going To</label>
+                                            <input name="flight_to" type="text"
+                                            placeholder="Destination" id="flight_to" onchange="checkdata1();"
+                                            onclick="this.select();"
+                                            class="autocomplete_to autocomplete_from_to location1">
+                                            <div class="autocomplete-results_to"></div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid1">
+                                        <div>
+                                            <label for="">Depart Date</label>
+                                            <input type="text" id="flight_from_date" name="flight_from_date"
+                                            placeholder="DD-MM-YYYY" required="" class="hasDatepicker">
+                                        </div>
+                                        <div>
+                                            <label for="">Return Date</label>
+                                            <input type="text" id="flight_to_date" name="flight_to_date"
+                                                placeholder="DD-MM-YYYY" required="" class="hasDatepicker">
+                                        </div>
+                                    </div>
+                                <div class="bottom-section d-flex">
+                                    <div class="pax-contents" style="flex: 1;">
+
+                                        <div class="ind_srch_subBox prp_popup">
+                                            <div class="prsn_popup" id="prsn_add">
+                                                <label for="">Pass. Info.</label>
+                                                <input type="text" readonly="" name="pass_info" id="pass_info"
+                                                    placeholder="1 Pax, Economy" class="ind_inputBox">
+                                            </div>
+                                            <div class="person_dropdown" id="prsn_popup" style="display: none;">
+                                                <ul class="slect_pssngr">
+                                                    <li>
+                                                        <label>Adult &nbsp;<span>(12+ Years)</span></label>
+                                                        <div class="count_pssngr">
+                                                            <a href="javascript:void(0);"><em data-field="adult"
+                                                                    data-opt="-" class="fa fa-minus inc_der"></em></a>
+                                                            <input type="text" style="color: #141414 !important;"
+                                                                readonly="" value="1" name="flight_adult"
+                                                                id="flight_adult" class="inpt_cout_pssngr">
+                                                            <a href="javascript:void(0);"><em data-field="adult"
+                                                                    data-opt="+" class="fa fa-plus inc_der"></em></a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <label style="max-width: 125px; line-height: 1.3;">Children
+                                                            &nbsp;<span>(2-11 Years)</span></label>
+                                                        <div class="count_pssngr">
+                                                            <a href="javascript:void(0);"><em data-field="child"
+                                                                    data-opt="-" class="fa fa-minus inc_der"></em></a>
+                                                            <input type="text" style="color: #141414 !important;"
+                                                                readonly="" value="0" name="flight_child"
+                                                                id="flight_child" class="inpt_cout_pssngr">
+                                                            <a href="javascript:void(0);"><em data-field="child"
+                                                                    data-opt="+" class="fa fa-plus inc_der"></em></a>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <label>Infant &nbsp;<span>(0-2 Years)</span></label>
+                                                        <div class="count_pssngr">
+                                                            <a href="javascript:void(0);"><em data-field="infant"
+                                                                    data-opt="-" class="fa fa-minus inc_der"></em></a>
+                                                            <input type="text" style="color: #141414 !important;"
+                                                                readonly="" value="0" name="flight_infant"
+                                                                id="flight_infant" class="inpt_cout_pssngr">
+                                                            <a href="javascript:void(0);"><em data-field="infant"
+                                                                    data-opt="+" class="fa fa-plus inc_der"></em></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="combin_class">
+                                                    <ul class="in_list_cls">
+                                                        <li><input type="radio" name="flight_class" id="flight_class_4"
+                                                                value="4" checked=""> <label
+                                                                for="flight_class_4">Economy</label></li>
+                                                        <li><input type="radio" name="flight_class" id="flight_class_3"
+                                                                value="3"> <label for="flight_class_3">Premium
+                                                                Economy</label></li>
+                                                        <li><input type="radio" name="flight_class" id="flight_class_2"
+                                                                value="2"> <label for="flight_class_2">Business</label>
+                                                        </li>
+                                                        <li><input type="radio" name="flight_class" id="flight_class_1"
+                                                                value="1"> <label for="flight_class_1">First</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="clss_done" id="ind_done">
+                                                    <a href="javascript:void(0);" id="prsn_done">Done</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- <ul class="more-options">
+                                        <li>
+                                            <div class="airlnes">
+                                                <select id="ddlairline" class=" ">
+                                                    <option value="all">All Airlines</option>
+                                                    <option value="EI">Aer Lingus</option>
+                                                    <option value="AR">Aerolineas Argentinas</option>
+                                                    <option value="AB">Air Berlin</option>
+                                                    <option value="AC">Air Canada</option>
+                                                    <option value="CA">Air China</option>
+                                                    <option value="UX">Air Europa Lineas Aereas</option>
+                                                    <option value="AF">Air France</option>
+                                                    <option value="AI">Air India</option>
+                                                    <option value="JM">Air Jamaica</option>
+                                                    <option value="KM">Air Malta</option>
+                                                    <option value="MK">Air Mauritius</option>
+                                                    <option value="SW">Air Namibia</option>
+                                                    <option value="NZ">Air New Zealand</option>
+                                                    <option value="HM">Air Seychelles</option>
+                                                    <option value="AZ">Alitalia</option>
+                                                    <option value="AA">American Airlines</option>
+                                                    <option value="NH">ANA</option>
+                                                    <option value="OZ">Asiana Airlines</option>
+                                                    <option value="OS">Austrian Airlines</option>
+                                                    <option value="BA">British Airways</option>
+                                                    <option value="SN">Brussels Airlines</option>
+                                                    <option value="BW">Caribbean Airlines</option>
+                                                    <option value="CX">Cathay Pacific Airways</option>
+                                                    <option value="CI">China Airlines</option>
+                                                    <option value="MU">China Eastern Airlines</option>
+                                                    <option value="CZ">China Southern</option>
+                                                    <option value="CO">Continental Airlines</option>
+                                                    <option value="CY">Cyprus Airways</option>
+                                                    <option value="OK">Czech Airlines</option>
+                                                    <option value="DL">Delta Airlines</option>
+                                                    <option value="MS">Egypt Air</option>
+                                                    <option value="EK">Emirates Airways</option>
+                                                    <option value="OV">Estonian Air</option>
+                                                    <option value="ET">Ethiopian Airlines</option>
+                                                    <option value="EY">Etihad Airways</option>
+                                                    <option value="BR">EVA Air</option>
+                                                    <option value="AY">Finnair</option>
+                                                    <option value="BE">FlyBe</option>
+                                                    <option value="GA">Garuda Indonesia</option>
+                                                    <option value="GF">Gulf Air</option>
+                                                    <option value="IB">Iberia Airlines </option>
+                                                    <option value="FI">IcelandAir</option>
+                                                    <option value="JL">Japan Airlines</option>
+                                                    <option value="9W">Jet Airways</option>
+                                                    <option value="KL">KLM Royal Dutch Airlines</option>
+                                                    <option value="KE">Korean Air</option>
+                                                    <option value="KU">Kuwait Airways</option>
+                                                    <option value="LA">LAN Airlines</option>
+                                                    <option value="LO">LOT Polish Airlines</option>
+                                                    <option value="LH">Lufthansa</option>
+                                                    <option value="MH">Malaysia Airlines</option>
+                                                    <option value="ZB">Monarch Airlines</option>
+                                                    <option value="NW">Northwest Airlines</option>
+                                                    <option value="OA">Olympic Airlines</option>
+                                                    <option value="WY">Oman Air</option>
+                                                    <option value="QF">Qantas Airways</option>
+                                                    <option value="QR">Qatar Airways</option>
+                                                    <option value="AT">Royal Air Maroc</option>
+                                                    <option value="BI">Royal Brunei Airlines</option>
+                                                    <option value="RJ">Royal Jordanian</option>
+                                                    <option value="SK">SAS - Scandinavian Airlines</option>
+                                                    <option value="SQ">Singapore Airlines</option>
+                                                    <option value="SA">South African Airways</option>
+                                                    <option value="UL">SriLankan Airlines</option>
+                                                    <option value="LX">Swiss Airlines</option>
+                                                    <option value="JJ">TAM Airlines</option>
+                                                    <option value="TP">TAP Portugal</option>
+                                                    <option value="TG">Thai Airways</option>
+                                                    <option value="TK">Turkish Airlines</option>
+                                                    <option value="PS">Ukraine Intl.</option>
+                                                    <option value="UA">United Airlines</option>
+                                                    <option value="US">US Airways</option>
+                                                    <option value="HY">Uzbekistan Airways</option>
+                                                    <option value="RG">Varig Brazilian</option>
+                                                    <option value="VN">Vietnam Airlines</option>
+                                                    <option value="VS">Virgin Atlantic</option>
+                                                    <option value="VG">VLM Airlines</option>
+                                                </select>
+                                                <input type="hidden" name="FlightSearchEngine1$hfAirline"
+                                                    id="FlightSearchEngine1_hfAirline" value="All Airlines">
+                                            </div>
+                                            <div class="dropdown-section" id="mopt_list" style="display:none;">
+                                                <div class="dflexibility">
+                                                    <select name="FlightSearchEngine1$ddlFlexible"
+                                                        id="FlightSearchEngine1_ddlFlexible" class="custom-select"
+                                                        onchange="checkHidefilevalue();" style="display: none;">
+                                                        <option value="My dates are fixed">My dates are fixed</option>
+                                                    </select>
+                                                    <input type="hidden" name="FlightSearchEngine1$hfFlexible"
+                                                        id="FlightSearchEngine1_hfFlexible">
+                                                </div>
+                                                <button type="button" class="done_btn">Done</button>
+                                            </div>
+                                        </li>
+
+                                    </ul> -->
+                                    <div class="search_flights"> <a
+                                        onclick="return validateSearchengine();" name="flight_submit" id="flight_submit"
+                                        class="search_btn" style="padding-block: 12px !important;"> <i class="fa fa-search"></i><span>Search</span> </a> </div>
+                                </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-panel">
+                            <p>tab content 2</p>
+                        </div>
+                        <div class="tab-panel">
+                            <p>tab content 3</p>
+                        </div>
+                        <div class="tab-panel">
+                            <p>tab content 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container usps">
+        <div class="row grid grid3">
+            <p><i class="fa-solid fa-g"></i> &nbsp; google 4.5 Rated</p>
+            <p><i class="fa-solid fa-check"></i> &nbsp; 100% Secure Payments</p>
+            <p><i class="fa-solid fa-clock-rotate-left"></i> &nbsp; 24X7 Support</p>
+            <p><i class="fa-solid fa-clipboard-list"></i> &nbsp; IATA Accredited Agent</p>
+        </div>
+    </div>
+
+    <div class="container vootticketbook">
+        <div class="row">
+            <div class="column">
+                <h2>Book Cheap Flight Tickets</h2>
+                <p>Explore the world now and book the cheap flight tickets with the deals of VootHolidays. Don't miss
+                    the updated offers and discounts on the website.</p>
+                <br>
+                <div class="maininnerrow">
+                    <img src="./images/cardbg.jpg" style="width: 100%;border-radius: 10px 10px 0 0;" alt="">
+                    <div class="grid grid1" style="gap: 0;">
+                        <div class="innerrow d-flex">
+                            <div class="d-flex gap2" style="flex: 1;">
+                                <div>
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                </div>
+                                <div class="flex" style="flex: 1;">
+                                    <div>
+                                        <h4>JFK</h4>
+                                        <p>New York</p>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <p>Economy Class</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h4>BLR</h4>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href=""><button class="button">Book Now</button></a>
+                            </div>
+                        </div>
+                        <div class="innerrow d-flex">
+                            <div class="d-flex gap2" style="flex: 1;">
+                                <div>
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                </div>
+                                <div class="flex" style="flex: 1;">
+                                    <div>
+                                        <h4>JFK</h4>
+                                        <p>New York</p>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <p>Economy Class</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h4>BLR</h4>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href=""><button class="button">Book Now</button></a>
+                            </div>
+                        </div>
+                        <div class="innerrow d-flex">
+                            <div class="d-flex gap2" style="flex: 1;">
+                                <div>
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                </div>
+                                <div class="flex" style="flex: 1;">
+                                    <div>
+                                        <h4>JFK</h4>
+                                        <p>New York</p>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <p>Economy Class</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h4>BLR</h4>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href=""><button class="button">Book Now</button></a>
+                            </div>
+                        </div>
+                        <div class="innerrow d-flex">
+                            <div class="d-flex gap2" style="flex: 1;">
+                                <div>
+                                    <p><img src="./images/AI.png" alt=""> Air India</p>
+                                </div>
+                                <div class="flex" style="flex: 1;">
+                                    <div>
+                                        <h4>JFK</h4>
+                                        <p>New York</p>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <p>Economy Class</p>
+                                        <hr>
+                                        <p>Sep 30 - Nov 24</p>
+                                    </div>
+                                    <div>
+                                        <h4>BLR</h4>
+                                        <p>Bangalore</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href=""><button class="button">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container vootdestinations">
+        <div class="row">
+            <div class="column">
+                <div class="slider-container1">
+                    <div class="flex">
+                        <h2>Top Destinations at Affordable Prices</h2>
+                        <div>
+                            <button class="prev-btn1">&#10094;</button>
+                            <button class="next-btn1">&#10095;</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="slider1">
+                        <div class="slide1">
+                            <a href="https://www.vootholidays.com/cheap-flights-to-goa">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/goa.jpg);">
+                                    <h3>Goa</h3>
+                                    <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide1">
+                            <a href="">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/Agra.jpg);">
+                                    <h3>Agra, Uttar Pradesh</h3>
+                                    <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide1">
+                            <a href="">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/Delhi.jpg);">
+                                    <h3>Delhi</h3>
+                                    <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide1">
+                            <a href="">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/Darjeeling.jpg);">
+                                    <h3>Darjeeling, West Bengal</h3>
+                                    <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide1">
+                            <a href="">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/Jaisalmer.jpg);">
+                                    <h3>Jaisalmer, Rajasthan</h3>
+                                    <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide1">
+                            <a href="">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to right, rgb(20, 20, 20, 0.7), rgb(20, 20, 20, 0)), url(./images/kerla.jpg);">
+                                    <h3>Kerala</h3>
+                                    <p>Read More <i class="fa-solid fa-angles-right"></i></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container vootroutes">
+        <div class="row">
+            <div class="column">
+                <div class="slider-container2">
+                    <div class="flex">
+                        <h2>Fly on Cheapest Routes!</h2>
+                        <div>
+                            <button class="prev-btn2">&#10094;</button>
+                            <button class="next-btn2">&#10095;</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="slider2">
+                        <div class="slide2">
+                            <a href="https://www.vootholidays.com/delhi-to-mumbai-flights">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/Mumbai.jpg);">
+                                    <div class="flex gap3">
+                                        <h4><i class="fa-solid fa-plane-departure"></i> Delhi</h4>
+                                        <hr>
+                                        <h4><i class="fa-solid fa-plane-arrival"></i> Mumbai</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide2">
+                            <a href="https://www.vootholidays.com/mumbai-to-bengaluru-flights">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/Bangalore.jpg);">
+                                    <div class="flex gap3">
+                                        <h4><i class="fa-solid fa-plane-departure"></i> Mumbai</h4>
+                                        <hr>
+                                        <h4><i class="fa-solid fa-plane-arrival"></i> Bengaluru</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide2">
+                            <a href="https://www.vootholidays.com/delhi-to-srinagar-flights">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/Srinagar.jpg);">
+                                    <div class="flex gap3">
+                                        <h4><i class="fa-solid fa-plane-departure"></i> Delhi</h4>
+                                        <hr>
+                                        <h4><i class="fa-solid fa-plane-arrival"></i> Srinagar</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide2">
+                            <a href="https://www.vootholidays.com/delhi-to-kolkata-flights">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/Kolkata.jpg);">
+                                    <div class="flex gap3">
+                                        <h4><i class="fa-solid fa-plane-departure"></i> Delhi</h4>
+                                        <hr>
+                                        <h4><i class="fa-solid fa-plane-arrival"></i> Kolkata</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide2">
+                            <a href="https://www.vootholidays.com/delhi-to-hyderabad-flights">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/Hyderabad.jpg);">
+                                    <div class="flex gap3">
+                                        <h4><i class="fa-solid fa-plane-departure"></i> Delhi</h4>
+                                        <hr>
+                                        <h4><i class="fa-solid fa-plane-arrival"></i> Hyderabad</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide2">
+                            <a href="https://www.vootholidays.com/delhi-to-ayodhya-flights">
+                                <div class="innercol"
+                                    style="background-image: linear-gradient(to top, rgb(20, 20, 20, 0.5), rgb(20, 20, 20, 0)), url(./images/Ayodhya.jpg);">
+                                    <div class="flex gap3">
+                                        <h4><i class="fa-solid fa-plane-departure"></i> Delhi</h4>
+                                        <hr>
+                                        <h4><i class="fa-solid fa-plane-arrival"></i> Ayodhya</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container vootpackages">
+        <div class="row">
+            <div class="column">
+                <div class="slider-container3">
+                    <div class="flex">
+                        <h2>Customise Your Travel Package</h2>
+                        <div>
+                            <button class="prev-btn3">&#10094;</button>
+                            <button class="next-btn3">&#10095;</button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="slider3">
+                        <div class="slide3">
+                            <a href="https://www.vootholidays.com/lakshadweep-tour-packages">
+                                <div class="innercol">
+                                    <img src="./images/Lakshadweep.jpg" alt="">
+                                    <div class="flex">
+                                        <h4><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Lakshadweep</h4>
+                                        <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide3">
+                            <a href="https://www.vootholidays.com/ladakh-tour-packages">
+                                <div class="innercol">
+                                    <img src="./images/Ladakh.jpg" alt="">
+                                    <div class="flex">
+                                        <h4><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Ladakh</h4>
+                                        <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide3">
+                            <a href="https://www.vootholidays.com/darjeeling-tour-packages">
+                                <div class="innercol">
+                                    <img src="./images/Darjeeling.jpg" alt="">
+                                    <div class="flex">
+                                        <h4><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Darjeeling</h4>
+                                        <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide3">
+                            <a href="https://www.vootholidays.com/andaman-tour-packages">
+                                <div class="innercol">
+                                    <img src="./images/andman.jpg" alt="">
+                                    <div class="flex">
+                                        <h4><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Andaman</h4>
+                                        <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide3">
+                            <a href="https://www.vootholidays.com/north-east-tour-packages">
+                                <div class="innercol">
+                                    <img src="./images/north-east.jpg" alt="">
+                                    <div class="flex">
+                                        <h4><i class="fa-solid fa-umbrella-beach"></i>&nbsp; North East</h4>
+                                        <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="slide3">
+                            <a href="https://www.vootholidays.com/ayodhya-tour-packages">
+                                <div class="innercol">
+                                    <img src="./images/Ayodhya.jpg" alt="">
+                                    <div class="flex">
+                                        <h4><i class="fa-solid fa-umbrella-beach"></i>&nbsp; Ayodhya</h4>
+                                        <p><b>Book Now &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></b>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container faqsection">
+        <div class="row">
+            <div class="column">
+                <h2>FAQs</h2>
+                <br>
+                <div class="grid grid1">
+                    <div style="gap: 10px;display: grid;margin-bottom: auto;">
+                        <div class="faqs">
+                            <div class="faqhead flex">
+                                <h4>1. What is VootHolidays?</h4>
+                                <h4><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></h4>
+                            </div>
+                            <div class="faqdetails">
+                                <p>It is a travel support and assistant portal, where you can check the fares and
+                                    compare the deals to grab the right one for your trip. Travel booking is not so
+                                    difficult for flyers when they get assistance from the right platform.</p>
+                            </div>
+                        </div>
+                        <div class="faqs">
+                            <div class="faqhead flex">
+                                <h4>2. What is the logic of choosing the cheapest day to book a flight?</h4>
+                                <h4><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></h4>
+                            </div>
+                            <div class="faqdetails">
+                                <p>It is the proper method to consider the right deal and destination. Your booking and
+                                    travel flexibility decide the percentage of discount that you can grab from any
+                                    website. However, the logic of the cheapest day to book a flight works for both
+                                    domestic and international travel.</p>
+                            </div>
+                        </div>
+                        <div class="faqs">
+                            <div class="faqhead flex">
+                                <h4>3. Which is the cheapest day to find flight deals?</h4>
+                                <h4><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></h4>
+                            </div>
+                            <div class="faqdetails">
+                                <p>No doubt it is a weekday because weekends are busiest and expensive as well for
+                                    booking and travel. You can see, people who choose weekends to fly or book airline
+                                    tickets always pay an extra amount of money for airline reservations, rather than
+                                    those people who are flexible with their arrival and departure dates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="gap: 10px;display: grid;margin-bottom: auto;">
+                        <div class="faqs">
+                            <div class="faqhead flex">
+                                <h4>4. How to book cheap flight tickets?</h4>
+                                <h4><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></h4>
+                            </div>
+                            <div class="faqdetails">
+                                <p>You can book the cheap flight tickets while being flexible, booking tickets on
+                                    weekdays, flying during the off-season time, and booking the tickets in advance.
+                                    These are some significant ways that you can choose to buy cheap tickets for your
+                                    destination.</p>
+                            </div>
+                        </div>
+                        <div class="faqs">
+                            <div class="faqhead flex">
+                                <h4>5. Are airlines or travel booking websites like VootHolidays tracking my searches to
+                                    raise prices?</h4>
+                                <h4><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></h4>
+                            </div>
+                            <div class="faqdetails">
+                                <p>Is the "clear your cookies" trick right?
+                                    <br>
+                                    Well, the answer is no, because sometimes people think that this trick is right.
+                                    After all, this is one of the biggest myths in travel. You can also check by
+                                    yourself by clearing your cookies. Airlines use an incredibly complex pricing system
+                                    based on supply and demand, and historical data does not affect their pricing at
+                                    all. The price changes from time to time because a fare bucket sells out, or the
+                                    airline algorithm adjusts the price for everyone, not just for you. The real reason
+                                    behind the price change is that it is dynamic and changes constantly. At the same
+                                    time, cookies are used for ads.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faqs">
+                            <div class="faqhead flex">
+                                <h4>6. Is there really a "magic day" to book flights, like Tuesday at 1 PM?</h4>
+                                <h4><i class="fa-solid fa-angle-down"></i><i class="fa-solid fa-angle-up"></i></h4>
+                            </div>
+                            <div class="faqdetails">
+                                <p>Another big myth that you need to avoid is the magic day to book flights. It is true
+                                    that many airlines announce their fare sales every week to sell out all the tickets,
+                                    but often launch early in the week, and modern dynamic pricing still works. The
+                                    modern rule is that the cheapest days to fly are far more critical than the cheapest
+                                    day to book. On the other hand, flying on Tuesday, Wednesday, and Saturday is almost
+                                    always more affordable than flying on Friday and Sunday. Your strategy should focus
+                                    on flexibility rather than on the cheapest days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <a href="tel:+18004369330">
+            <div class="flex gap2">
+                <h3><i class="fa-solid fa-phone"></i></h3>
+                <div>
+                    <h4><a href="tel:+919582828275">+91-9582828275</a></h4>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="container newfooter">
+        <div class="row">
+            <div class="grid">
+                <div class="column">
+                    <a href="/"><img src="./images/footer-logo.png" alt=""></a>
+                    <br><br>
+                    <a target="_blank" href="https://www.facebook.com/vootholidays/"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://x.com/vootholidays"><i class="fa-brands fa-twitter"></i></a>
+                    <a target="_blank" href="http://instagram.com/vootholidays"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/vootholidays"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/Vootholidays"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="column">
+                    <h4>LEGAL</h4>
+                    <p><a href="https://vootholidays.com/terms-condition">Terms & Conditions</a></p>
+                    <p><a href="https://vootholidays.com/privacy-policy">Privacy Policy</a></p>
+                    <p><a href="https://vootholidays.com/cookies-policy">Cookies Policy</a></p>
+                    <p><a href="https://vootholidays.com/cancellation-refund-policy">Cancellation & Refund</a></p>
+                </div>
+                <div class="column">
+                    <h4>Contact Us</h4>
+                    <p><b>Corporate Office</b></p>
+                    <p>Voot Holidays 206, Sai Complex, Nangloi, 110041, India</p>
+                </div>
+                <div class="column">
+                    <h4>Reach Us</h4>
+                    <a href="tel:+919582828275">
+                        <p><i class="fa-solid fa-phone-volume"></i> +91-9582828275</p>
+                    </a>
+                    <a href="mailto:support@vootholidays.com">
+                        <p><i class="fa-solid fa-at"></i> support@vootholidays.com</p>
+                    </a>
+                    <a href="mailto:info@vootholidays.com">
+                        <p><i class="fa-solid fa-envelope-open-text"></i> info@vootholidays.com</p>
+                    </a>
+                    <p>24 x 7 Support</p>
+                </div>
+            </div>
+            <hr style="border-color: var(--primary-color);">
+            <p style="font-size: 13px !important;line-height: 1.5;">*VootHoliday is a travel booking and comparison
+                website, where you can find thousands of deals and reservation offers. While looking for the cheap
+                flight ticket deals or the best destinations to explore the world. Flexibility is the key to success,
+                and manage your reservations with the best deals now. Compare the airfare on the top destination and
+                find great deals for the airline ticket booking.</p>
+        </div>
+        <hr style="margin: 0;">
+        <div style="text-align:center;">
+            <div class="foot">
+                <p>© 2025 VootHolidays. All rights Reserved. </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./css/file.js"></script>
+<script src="./css/slider.js"></script>
+
+</html>

@@ -1,0 +1,18 @@
+:root {
+--ltn__body-font: 'Roboto', sans-serif;
+--font-rubik:'Rubik';
+--font-barlow:'Barlow', sans-serif;
+--black: #000;
+--white:#fff;
+--color-1:#3B444F;
+--color-2:#f36c3b;
+--background-1:#f36c3b;
+--background-2:#125497;
+--border-1:#ddd;
+--background-3:#f7f7f7;
+--transition: all .3s ease-in-out;
+}
+//list
+@mixin list {margin: 0;padding: 0;}
+@mixin list-li {list-style: none;transition: var(--transition);}
+//end
