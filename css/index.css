@@ -268,8 +268,8 @@ form {
     }
 
     .grid {
-            gap: 5px;
-        }
+        gap: 5px;
+    }
 
     .col3 {
         gap: 10px;
@@ -688,6 +688,7 @@ form {
 }
 
 .faqsection {
+
     .fa-angle-up,
     .faqdetails {
         display: none;
@@ -707,6 +708,10 @@ form {
         border-top: 1px solid var(--third-color);
         padding-top: 5px;
         margin-top: 10px;
+    }
+
+    .show {
+        display: block;
     }
 }
 
@@ -762,7 +767,9 @@ form {
 }
 
 .termfaq {
-    .faqdetails, .fa-angle-up {
+
+    .faqdetails,
+    .fa-angle-up {
         display: none;
     }
 
@@ -793,5 +800,9 @@ form {
         background-color: transparent;
         list-style-type: disc;
         margin-left: 10px;
+    }
+
+    .show {
+        display: block;
     }
 }
