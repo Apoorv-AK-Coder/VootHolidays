@@ -6,11 +6,11 @@
     }
 
     h1 {
-        font-size: 1.8em !important;
+        font-size: 1.7em !important;
     }
 
     h2 {
-        font-size: 1.5em !important;
+        font-size: 1.4em !important;
     }
 
     h3 {
@@ -181,7 +181,7 @@
             justify-content: left !important;
         }
 
-        .row{
+        .row {
             padding-block: 20px;
         }
     }
@@ -207,6 +207,47 @@
     .vootpackages {
         .slide3 {
             min-width: 100%;
+        }
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .destinations {
+        .grid {
+            .imgcolumn {
+                height: 250px;
+            }
+
+            a:nth-child(2) {
+                .imgcolumn {
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    .usps1 {
+        .grid {
+            .innercol1 {
+                text-align: left;
+            }
+        }
+    }
+
+    .bg {
+        .column {
+            width: 100%;
+        }
+    }
+
+    .deals {
+        .grid {
+            .column:first-child,
+            .column:last-child {
+                grid-column: span 1;
+            }
         }
     }
 }
