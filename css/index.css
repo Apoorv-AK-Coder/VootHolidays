@@ -32,13 +32,13 @@
             background-color: var(--primary-color);
             margin: auto 0;
             padding: 10px;
-            border-radius: 0 25px 25px 0;
+            border-radius: 25px 0 0 25px;
         }
 
         p {
             border: 1px solid var(--primary-color);
-            padding: 2px 12px;
-            border-radius: 25px 0 0 25px;
+            padding: 1px 12px;
+            border-radius: 0 25px 25px 0;
             background-color: var(--fourth-color);
             margin: auto 0 !important;
         }
@@ -237,11 +237,11 @@ form {
         border-radius: 100%;
     }
 
-    div {
-        margin: auto 0;
+    .flex {
+        gap: 10px;
     }
 
-    h3 {
+    div, h3 {
         margin: auto 0 !important;
     }
 
@@ -254,7 +254,7 @@ form {
 }
 
 .VootBanner {
-    background-image: url(../images/home-bg.jpg);
+    background-image: linear-gradient(to right, rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)), url(../images/vootbg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -264,7 +264,7 @@ form {
     }
 
     h1 {
-        color: var(--fifth-color) !important;
+        color: var(--fourth-color) !important;
     }
 
     .grid {
@@ -273,21 +273,21 @@ form {
 
     .col3 {
         gap: 10px;
+        margin-top: 15px;
 
         label {
             margin-left: 12px;
             font-size: 14px;
             font-weight: 400;
-            background-color: #cacaca;
+            background-color: #fff;
             z-index: 9;
             position: relative;
-            padding: 0 5px;
-            border-radius: 5px;
-            color: var(--fifth-color);
+            margin-top: 0;
         }
 
         ::placeholder {
             color: #676767;
+            font-size: 15px;
         }
 
         .column,
@@ -311,24 +311,15 @@ form {
         select {
             border: 1px solid #9d9d9d;
             margin: 0;
-            padding-block: 18px !important;
-            padding-left: 35px !important;
+            padding-block: 20px !important;
+            padding-left: 27px !important;
             margin-top: -11px;
             margin-bottom: 0 !important;
             background-color: transparent;
-            background-position-x: 10px;
+            background-position-x: 7px;
             background-position-y: center;
             background-repeat: no-repeat;
-            background-size: 17px;
-        }
-
-        .form-control {
-            padding-block: 0 !important;
-            border: none;
-        }
-
-        .dropdown-container {
-            max-width: fit-content;
+            background-size: 14px;
         }
 
         #flight_from {
@@ -347,28 +338,25 @@ form {
         #pass_info {
             background-image: url(../images/passengers.png);
         }
-
-        #pass-info {
-            justify-content: end;
-            display: flex;
-            margin: auto 0;
-        }
     }
 
     .search_flights {
         text-align: right;
         margin-top: auto;
         flex: none !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 16px !important;
     }
 
     .tabs {
         margin: 0;
         margin-top: 20px;
         margin-bottom: 10px;
+        display: flex;
+        gap: 10px;
     }
 
     .tab-btn {
+        width: fit-content;
         padding: 5px 20px;
         background-color: var(--fourth-color);
         border: none;
@@ -384,15 +372,14 @@ form {
 
     .tab-content {
         display: flex;
-        border-radius: 10px;
-        padding: 15px;
+        border-radius: 15px;
+        padding: 20px;
         box-shadow: 0 0 4px 4px rgba(20, 20, 20, 0.1);
         background-color: var(--fourth-color);
     }
 
     .tab-panel {
         display: none;
-        border-radius: 0 0 10px 10px;
         width: 100%;
     }
 
@@ -411,22 +398,14 @@ form {
 
 .usps {
     text-align: center;
-    background: linear-gradient(to right, #88C72E, #C7A02E);
+    background: linear-gradient(to right, var(--third-color), var(--secondary-color));
 
     .row {
-        padding-block: 20px;
-    }
-
-    i {
-        color: var(--primary-color);
-        background-color: var(--third-color);
-        padding: 10px;
-        border-radius: 10px;
+        padding-block: 5px;
     }
 
     p {
         color: var(--fourth-color);
-        font-size: 18px;
     }
 }
 
@@ -621,7 +600,7 @@ form {
 
     .innercol {
         border-radius: 10px;
-    background-color: rgb(136, 199, 46, 0.1);
+        background-color: rgb(136, 199, 46, 0.1);
     }
 }
 
@@ -653,16 +632,13 @@ form {
         button {
             background-color: transparent;
             border: 1.5px solid var(--primary-color);
-            color: var(--primary-color);
+            color: var(--primary-color) !important;
         }
 
-        .column:hover {
-            border-color: var(--primary-color);
-
-            button {
-                background-color: var(--primary-color);
-                color: var(--fourth-color);
-            }
+        button:hover {
+            background-color: var(--secondary-color) !important;
+            color: var(--fourth-color) !important;
+            border-color: var(--secondary-color) !important;
         }
 
         p {
@@ -855,7 +831,7 @@ form {
     }
 
     #results div {
-        padding:5px 15px;
+        padding: 5px 15px;
         cursor: pointer;
     }
 
@@ -1033,7 +1009,8 @@ form {
             padding: 15px;
         }
 
-        h4, p {
+        h4,
+        p {
             line-height: 1.6 !important;
         }
 
@@ -1049,7 +1026,8 @@ form {
         margin-left: auto;
         width: fit-content;
 
-        #next-btn, #prev-btn {
+        #next-btn,
+        #prev-btn {
             background-color: var(--primary-color);
             color: var(--third-color);
             padding: 5px 12px;
@@ -1061,7 +1039,7 @@ form {
             background-color: var(--third-color);
             border: none;
             padding: 5px 0 5px 5px;
-            
+
             button {
                 margin-right: 5px;
                 background-color: var(--fourth-color);

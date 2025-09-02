@@ -1,6 +1,6 @@
 /* Global CSS Starts Here*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Pau+Cin+Hau');
 
 * {
     margin: 0;
@@ -13,13 +13,13 @@ body {
 }
 
 :root {
-    --primary-color: #88C72E;
-    --secondary-color: #00c4ff;
+    --primary-color: #00C4FF;
+    --secondary-color: #004F7C;
     --third-color: #062047;
     --fourth-color: #ffffff;
     --fifth-color: #141414;
     /*fonts*/
-    --primary-font: Montserrat;
+    --primary-font: "Noto Sans Pau Cin Hau";
     --secondary-font: Roboto;
 }
 
@@ -87,7 +87,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8em !important;
+    font-size: 1.7em !important;
     color: var(--fifth-color) !important;
     font-weight: 700 !important;
 }
@@ -113,13 +113,14 @@ li {
     background: var(--primary-color);
     padding: 5px 20px !important;
     border-radius: 0;
-    color: var(--fifth-color) !important;
+    color: var(--fourth-color) !important;
     font-weight: 700;
     border-radius: 5px;
 }
 
 .button:hover, #prsn_done:hover, #flight_submit:hover {
     background-color: var(--secondary-color);
+    /* color: var(); */
 }
 
 .gap {

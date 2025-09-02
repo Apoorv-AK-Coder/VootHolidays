@@ -136,6 +136,18 @@
 }
 
 @media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em !important;
+    }
+
+    h2 {
+        font-size: 1.3em !important;
+    }
+
+    h3 {
+        font-size: 1.17em !important;
+    }
+
     .d-flex {
         flex-direction: column;
     }
@@ -170,19 +182,9 @@
         .newhead {
             .left {
                 img {
-                    width: 80px;
+                    width: 100px;
                 }
             }
-        }
-    }
-
-    .VootBanner {
-        #pass-info {
-            justify-content: left !important;
-        }
-
-        .row {
-            padding-block: 20px;
         }
     }
 
@@ -244,10 +246,34 @@
 
     .deals {
         .grid {
+
             .column:first-child,
             .column:last-child {
                 grid-column: span 1;
             }
+        }
+    }
+
+    .usps {
+        p:first-child {
+            display: none;
+        }
+    }
+
+    .VootBanner {
+        .row {
+            padding-block: 20px;
+        }
+
+        .col3 {
+            input,
+            select {
+                padding-block: 12px !important;
+            }
+        }
+
+        .search_flights {
+            margin-top: 15px !important;
         }
     }
 }
