@@ -21,7 +21,7 @@
         max-width: fit-content;
 
         img {
-            width: 175px;
+            width: 135px;
         }
     }
 
@@ -211,10 +211,6 @@ form {
     h1 {
         color: var(--fourth-color);
         font-weight: 700 !important;
-    }
-
-    .row {
-        padding-top: 150px;
     }
 }
 
@@ -1064,6 +1060,21 @@ form {
 
         button {
             border-radius: 0 50px 50px 0;
+        }
+    }
+}
+
+.maininner {
+    ul {
+        list-style-type: disc;margin-left: 16px;
+    }
+
+    table {
+        width: 100%;
+
+        td {
+            padding: 5px 10px;
+            border: 1px solid var(--fifth-color);
         }
     }
 }

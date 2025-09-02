@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <title>kashmir-4night-5Days-package – VootHolidays</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/responsive.css" rel="stylesheet">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link href="./fontawesome/css/all.min.css" rel="stylesheet">
+
+    <link href="/Content/flcss/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/flcss/home.css" rel="stylesheet" />
+    <link href="/Content/flcss/styles.css" rel="stylesheet" />
+    <link href="/Content/flcss/inner.css" rel="stylesheet" />
+    <link href="/Content/flcss/animated.css" rel="stylesheet" />
+    <link href="/Content/flcss/common.css" rel="stylesheet" />
+    <link href="/Content/flcss/style_result.css" rel="stylesheet" />
+    <link href="/Content/flcss/jquery-ui.min.css" rel="stylesheet" />
+    <link href="/Content/flcss/owl.theme.default.css" rel="stylesheet" />
+    <link href="/Content/flcss/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/flcss/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/searchAirport.css" rel="stylesheet" />
+    <link href="/Content/jquery-ui.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="newheader" id="newheader">
+        <div class="newhead">
+            <div class="flex">
+                <div class="column left">
+                    <a href="/">
+                        <img src="./images/logo.png" alt="">
+                    </a>
+                </div>
+
+                <div class="column navigate" id="view">
+                    <div id="off">
+                        <i class="fa-solid fa-xmark" style="margin-bottom: 30px !important;"></i>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/flights">Flights</a></li>
+                            <li><a href="/vacations">Vacations</a></li>
+                            <li><a href="/blogs">Blog</a></li>
+                            <li><a href="/contact-us">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="right flex">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <p><a href="tel:+919582828275">+91-9582828275</a></p>
+                </div>
+
+                <div class="column icon" id="on">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container VootBanner">
+        <div class="innervootbg">
+            <div class="row">
+                <div class="column mainformcol">
+                    <h1>The Best Travel Experiences Await You!</h1>
+                    <p style="color: #fff;">Let's Travel <b>the WORLD</b> upto 40% OFF on <b>Flights</b>*</p>
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="openTab(0)">Flight</button>
+                        <button class="tab-btn" onclick="openTab(1)">Hotels</button>
+                        <button class="tab-btn" onclick="openTab(2)">Car</button>
+                        <button class="tab-btn" onclick="openTab(3)">Bus</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-panel active">
+                            <form action="/Home/_SearchEngineHome" method="post">
+                                <div class="column radio">
+                                    <div>
+                                        <input name="flight_way" type="radio" id="rdoRoundtrip" checked="" value="2"
+                                            class="flight_way slct_btn onwtrp">
+                                        <label for="rdoRoundtrip"><span><span></span></span>Round Trip</label>
+                                    </div>
+                                    <div>
+                                        <input name="flight_way" type="radio" value="1" id="rdoOneway"
+                                            class="flight_way slct_btn rndtrp trpact">
+                                        <label for="rdoOneway"><span><span></span></span>One Way</label>
+                                    </div>
+                                </div>
+                                <div class="col3 grid grid2">
+                                    <div class="grid grid1">
+                                        <div class="autocomplete-wrapper">
+                                            <label for="">Depart From</label>
+                                            <input name="flight_from" type="text" placeholder="Origin" id="flight_from"
+                                                onchange="checkdata();" onclick="this.select();"
+                                                class="autocomplete_from autocomplete_from_new location">
+                                            <div class="autocomplete-results"></div>
+                                        </div>
+                                        <div class="autocomplete-wrapper">
+                                            <label for="">Going To</label>
+                                            <input name="flight_to" type="text" placeholder="Destination" id="flight_to"
+                                                onchange="checkdata1();" onclick="this.select();"
+                                                class="autocomplete_to autocomplete_from_to location1">
+                                            <div class="autocomplete-results_to"></div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid1">
+                                        <div>
+                                            <label for="">Depart Date</label>
+                                            <input type="text" id="flight_from_date" name="flight_from_date"
+                                                placeholder="DD-MM-YYYY" required="" class="hasDatepicker">
+                                        </div>
+                                        <div>
+                                            <label for="">Return Date</label>
+                                            <input type="text" id="flight_to_date" name="flight_to_date"
+                                                placeholder="DD-MM-YYYY" required="" class="hasDatepicker">
+                                        </div>
+                                    </div>
+                                    <div class="bottom-section d-flex">
+                                        <div class="pax-contents" style="flex: 1;">
+
+                                            <div class="ind_srch_subBox prp_popup">
+                                                <div class="prsn_popup" id="prsn_add">
+                                                    <label for="">Pass. Info.</label>
+                                                    <input type="text" readonly="" name="pass_info" id="pass_info"
+                                                        placeholder="1 Pax, Economy" class="ind_inputBox">
+                                                </div>
+                                                <div class="person_dropdown" id="prsn_popup" style="display: none;">
+                                                    <ul class="slect_pssngr">
+                                                        <li>
+                                                            <label>Adult &nbsp;<span>(12+ Years)</span></label>
+                                                            <div class="count_pssngr">
+                                                                <a href="javascript:void(0);"><em data-field="adult"
+                                                                        data-opt="-"
+                                                                        class="fa fa-minus inc_der"></em></a>
+                                                                <input type="text" style="color: #141414 !important;"
+                                                                    readonly="" value="1" name="flight_adult"
+                                                                    id="flight_adult" class="inpt_cout_pssngr">
+                                                                <a href="javascript:void(0);"><em data-field="adult"
+                                                                        data-opt="+"
+                                                                        class="fa fa-plus inc_der"></em></a>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <label style="max-width: 125px; line-height: 1.3;">Children
+                                                                &nbsp;<span>(2-11 Years)</span></label>
+                                                            <div class="count_pssngr">
+                                                                <a href="javascript:void(0);"><em data-field="child"
+                                                                        data-opt="-"
+                                                                        class="fa fa-minus inc_der"></em></a>
+                                                                <input type="text" style="color: #141414 !important;"
+                                                                    readonly="" value="0" name="flight_child"
+                                                                    id="flight_child" class="inpt_cout_pssngr">
+                                                                <a href="javascript:void(0);"><em data-field="child"
+                                                                        data-opt="+"
+                                                                        class="fa fa-plus inc_der"></em></a>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <label>Infant &nbsp;<span>(0-2 Years)</span></label>
+                                                            <div class="count_pssngr">
+                                                                <a href="javascript:void(0);"><em data-field="infant"
+                                                                        data-opt="-"
+                                                                        class="fa fa-minus inc_der"></em></a>
+                                                                <input type="text" style="color: #141414 !important;"
+                                                                    readonly="" value="0" name="flight_infant"
+                                                                    id="flight_infant" class="inpt_cout_pssngr">
+                                                                <a href="javascript:void(0);"><em data-field="infant"
+                                                                        data-opt="+"
+                                                                        class="fa fa-plus inc_der"></em></a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="combin_class">
+                                                        <ul class="in_list_cls">
+                                                            <li><input type="radio" name="flight_class"
+                                                                    id="flight_class_4" value="4" checked=""> <label
+                                                                    for="flight_class_4">Economy</label></li>
+                                                            <li><input type="radio" name="flight_class"
+                                                                    id="flight_class_3" value="3"> <label
+                                                                    for="flight_class_3">Premium
+                                                                    Economy</label></li>
+                                                            <li><input type="radio" name="flight_class"
+                                                                    id="flight_class_2" value="2"> <label
+                                                                    for="flight_class_2">Business</label>
+                                                            </li>
+                                                            <li><input type="radio" name="flight_class"
+                                                                    id="flight_class_1" value="1"> <label
+                                                                    for="flight_class_1">First</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="clss_done" id="ind_done">
+                                                        <a href="javascript:void(0);" id="prsn_done">Done</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- <ul class="more-options">
+                                        <li>
+                                            <div class="airlnes">
+                                                <select id="ddlairline" class=" ">
+                                                    <option value="all">All Airlines</option>
+                                                    <option value="EI">Aer Lingus</option>
+                                                    <option value="AR">Aerolineas Argentinas</option>
+                                                    <option value="AB">Air Berlin</option>
+                                                    <option value="AC">Air Canada</option>
+                                                    <option value="CA">Air China</option>
+                                                    <option value="UX">Air Europa Lineas Aereas</option>
+                                                    <option value="AF">Air France</option>
+                                                    <option value="AI">Air India</option>
+                                                    <option value="JM">Air Jamaica</option>
+                                                    <option value="KM">Air Malta</option>
+                                                    <option value="MK">Air Mauritius</option>
+                                                    <option value="SW">Air Namibia</option>
+                                                    <option value="NZ">Air New Zealand</option>
+                                                    <option value="HM">Air Seychelles</option>
+                                                    <option value="AZ">Alitalia</option>
+                                                    <option value="AA">American Airlines</option>
+                                                    <option value="NH">ANA</option>
+                                                    <option value="OZ">Asiana Airlines</option>
+                                                    <option value="OS">Austrian Airlines</option>
+                                                    <option value="BA">British Airways</option>
+                                                    <option value="SN">Brussels Airlines</option>
+                                                    <option value="BW">Caribbean Airlines</option>
+                                                    <option value="CX">Cathay Pacific Airways</option>
+                                                    <option value="CI">China Airlines</option>
+                                                    <option value="MU">China Eastern Airlines</option>
+                                                    <option value="CZ">China Southern</option>
+                                                    <option value="CO">Continental Airlines</option>
+                                                    <option value="CY">Cyprus Airways</option>
+                                                    <option value="OK">Czech Airlines</option>
+                                                    <option value="DL">Delta Airlines</option>
+                                                    <option value="MS">Egypt Air</option>
+                                                    <option value="EK">Emirates Airways</option>
+                                                    <option value="OV">Estonian Air</option>
+                                                    <option value="ET">Ethiopian Airlines</option>
+                                                    <option value="EY">Etihad Airways</option>
+                                                    <option value="BR">EVA Air</option>
+                                                    <option value="AY">Finnair</option>
+                                                    <option value="BE">FlyBe</option>
+                                                    <option value="GA">Garuda Indonesia</option>
+                                                    <option value="GF">Gulf Air</option>
+                                                    <option value="IB">Iberia Airlines </option>
+                                                    <option value="FI">IcelandAir</option>
+                                                    <option value="JL">Japan Airlines</option>
+                                                    <option value="9W">Jet Airways</option>
+                                                    <option value="KL">KLM Royal Dutch Airlines</option>
+                                                    <option value="KE">Korean Air</option>
+                                                    <option value="KU">Kuwait Airways</option>
+                                                    <option value="LA">LAN Airlines</option>
+                                                    <option value="LO">LOT Polish Airlines</option>
+                                                    <option value="LH">Lufthansa</option>
+                                                    <option value="MH">Malaysia Airlines</option>
+                                                    <option value="ZB">Monarch Airlines</option>
+                                                    <option value="NW">Northwest Airlines</option>
+                                                    <option value="OA">Olympic Airlines</option>
+                                                    <option value="WY">Oman Air</option>
+                                                    <option value="QF">Qantas Airways</option>
+                                                    <option value="QR">Qatar Airways</option>
+                                                    <option value="AT">Royal Air Maroc</option>
+                                                    <option value="BI">Royal Brunei Airlines</option>
+                                                    <option value="RJ">Royal Jordanian</option>
+                                                    <option value="SK">SAS - Scandinavian Airlines</option>
+                                                    <option value="SQ">Singapore Airlines</option>
+                                                    <option value="SA">South African Airways</option>
+                                                    <option value="UL">SriLankan Airlines</option>
+                                                    <option value="LX">Swiss Airlines</option>
+                                                    <option value="JJ">TAM Airlines</option>
+                                                    <option value="TP">TAP Portugal</option>
+                                                    <option value="TG">Thai Airways</option>
+                                                    <option value="TK">Turkish Airlines</option>
+                                                    <option value="PS">Ukraine Intl.</option>
+                                                    <option value="UA">United Airlines</option>
+                                                    <option value="US">US Airways</option>
+                                                    <option value="HY">Uzbekistan Airways</option>
+                                                    <option value="RG">Varig Brazilian</option>
+                                                    <option value="VN">Vietnam Airlines</option>
+                                                    <option value="VS">Virgin Atlantic</option>
+                                                    <option value="VG">VLM Airlines</option>
+                                                </select>
+                                                <input type="hidden" name="FlightSearchEngine1$hfAirline"
+                                                    id="FlightSearchEngine1_hfAirline" value="All Airlines">
+                                            </div>
+                                            <div class="dropdown-section" id="mopt_list" style="display:none;">
+                                                <div class="dflexibility">
+                                                    <select name="FlightSearchEngine1$ddlFlexible"
+                                                        id="FlightSearchEngine1_ddlFlexible" class="custom-select"
+                                                        onchange="checkHidefilevalue();" style="display: none;">
+                                                        <option value="My dates are fixed">My dates are fixed</option>
+                                                    </select>
+                                                    <input type="hidden" name="FlightSearchEngine1$hfFlexible"
+                                                        id="FlightSearchEngine1_hfFlexible">
+                                                </div>
+                                                <button type="button" class="done_btn">Done</button>
+                                            </div>
+                                        </li>
+
+                                    </ul> -->
+                                        <div class="search_flights"> <a onclick="return validateSearchengine();"
+                                                name="flight_submit" id="flight_submit" class="search_btn"
+                                                style="padding-block: 12px !important;"> <i
+                                                    class="fa fa-search"></i><span>Search</span> </a> </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-panel form2">
+                            <form action="">
+                                <div class="col3 grid grid2">
+                                    <div class="labelcol">
+                                        <label for="">Hotel Name</label>
+                                        <input type="text" placeholder="Your Place...">
+                                    </div>
+                                    <div class="grid grid1">
+                                        <div class="labelcol">
+                                            <label for="">Check In Date</label>
+                                            <input type="date">
+                                        </div>
+                                        <div class="labelcol">
+                                            <label for="">Check Out Date</label>
+                                            <input type="date">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="labelcol">
+                                            <label for="">Passengers Info.</label>
+                                            <input type="text" placeholder="1room, 2 Guests">
+                                        </div>
+                                        <button style="margin: auto 0 0 0 !important;" class="button">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-panel form2">
+                            <form action="">
+                                <div class="col3 grid grid2">
+                                    <div class="grid grid1">
+                                        <div class="labelcol">
+                                            <label for="">Pick Up</label>
+                                            <input type="text" placeholder="Your Place...">
+                                        </div>
+                                        <div class="labelcol">
+                                            <label for="">Drop Off</label>
+                                            <input type="text" placeholder="Next Place...">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid1">
+                                        <div class="labelcol">
+                                            <label for="">Pick Up Date</label>
+                                            <input type="datetime-local">
+                                        </div>
+                                        <div class="labelcol">
+                                            <label for="">Drop Off Date</label>
+                                            <input type="datetime-local">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="labelcol">
+                                            <label for="">Driver's Age</label>
+                                            <select name="" id="">
+                                                <option value="" selected>Select Age</option>
+                                                <option value="">Between 30-65</option>
+                                                <option value="">Below 30</option>
+                                                <option value="">Above 65</option>
+                                            </select>
+                                        </div>
+                                        <button style="margin: auto 0 0 0 !important;" class="button">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-panel form2">
+                            <form action="">
+                                <div class="col3 grid grid2">
+                                    <div class="grid grid1">
+                                        <div class="labelcol">
+                                            <label for="">Pick Up</label>
+                                            <input type="text" placeholder="Your Place...">
+                                        </div>
+                                        <div class="labelcol">
+                                            <label for="">Drop Off</label>
+                                            <input type="text" placeholder="Next Place...">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid1">
+                                        <div class="labelcol">
+                                            <label for="">Pick Up Date</label>
+                                            <input type="datetime-local">
+                                        </div>
+                                        <div class="labelcol">
+                                            <label for="">Drop Off Date</label>
+                                            <input type="datetime-local">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="labelcol">
+                                            <label for="">Driver's Age</label>
+                                            <select name="" id="">
+                                                <option value="" selected>Select Age</option>
+                                                <option value="">Between 30-65</option>
+                                                <option value="">Below 30</option>
+                                                <option value="">Above 65</option>
+                                            </select>
+                                        </div>
+                                        <button style="margin: auto 0 0 0 !important;" class="button">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container maininner">
+        <div class="row">
+            <div class="column">
+                <h2>Special Kashmir Package - 4 Nights 5 Days</h2>
+                <h3>Inclusions</h3>
+                <ul>
+                    <li>Pick up & Drop</li>
+                    <li>All transfers & Sightseeing by A/c Pvt Vehicle</li>
+                    <li>All toll tax, parking charges, driver charges, fuel cost inclusive</li>
+                    <li>All Taxes Include</li>
+                </ul>
+                <br>
+                <h2>Itinerary 4N 5D Special Kashmir Package</h2>
+                <br>
+                <h3>Day 1: Arrive – Srinagar + Local Sightseeing</h3>
+                <p>Arrive Srinagar Airport. Meeting and assistance on arrival and transfer to Hotel. Later, visit Mughal Garden "Nishat" (The Garden of Pleasure) and "Shalimar" (Abode of All). Drive along the Lake side on Boulevard On return visit a local Handicrafts Emporium for hand-knotted specialty silken carpets, shawls, jewellery ornaments. After lunch, in second half day Visit Shankaracharya Temple. Evening, enjoy 01 Hour Boat Ride on Dal Lake by a gondola Boat called ”SHIKARA” witness the ride on lake, called Venice of India & experience the aquatic life of Srinagar. Also see the scenic extravaganza of the Kashmir and enjoy the profusion of colors in the Paradise on Earth. While returning visit to the local crafts market and see the fine carved hand-made articles from Paper Machie & wood of a walnut.</p>
+                <br>
+                <h3>Day 2: Srinagar – Sonamarg – Srinagar</h3>
+                <p>After breakfast, leave for full day excursion trip to Sonamarg. Situated at an altitude of 9000 Ft. Sonamarg – 84 Kms is also called as “The meadow of gold” has, as its backdrop, snowy mountains against a cerulean sky. The Sindh River that meanders through the valley abounds with trout and mahaseer. Ponies can be hired for the trip up to Thajiwas glacier, which is a major local attraction during the summer. Return for Dinner & overnight stay Hotel.</p>
+                <br>
+                <h3>Day 3: Srinagar – Gulmarg – Srinagar</h3>
+                <p>Full Day return excursion to Gulmarg, called as “Meadow of Flowers”. Gulmarg is 53 Kms from Srinagar at an altitude of 8700-ft. Gulmarg also referred as Meadow of Flowers is a famous Ski Resort & the world’s highest 18 hole Golf Course. The place was prominent during the British time. Enjoy the scenic view of Kongdori on a Cable Car Ride – OPTIONAL (Gondola) Return to Srinagar for a Dinner & Overnight at the Hotel.</p>
+                <br>
+                <h3>Day 4: Srinagar – Pahalgam – Srinagar</h3>
+                <p>After breakfast, proceed for day trip to Pahalgam called as “Valley of Shepherds". In Pahalgam, Enjoy the nature & walk around the banks of River Lidder. Pahalgam is famous for some trekking routes also & is the base camp for Amarnath Pilgrimage. Return back to Srinagar for overnight stay at Hotel.</p>
+                <br>
+                <h3>Day 5: Departure</h3>
+                <p>Departure at Srinagar Airport to connect the flight for onwards destination. TOUR ENDS WITH SWEET MEMORIES!</p>
+                <br>
+                <h3>Hotel Details</h3>
+                <table>
+                    <tr>
+                        <td>Destination</td>
+                        <td>Standard</td>
+                        <td>Deluxe Hotels</td>
+                        <td>Super Deluxe</td>
+                        <td>Premium</td>
+                    </tr>
+                    <tr>
+                        <td>Srinagar</td>
+                        <td>Hotel Burj</td>
+                        <td>Hotel Shifaf / Hotel regal Palace / Houseboat / Similar</td>
+                        <td>Hotel royal Batoo / Royal Heritage / The Azara / Houseboat / Similar</td>
+                        <td>Grand Mamta / Grand Kaiser / Rose Petal / Houseboat / Similar</td>
+                    </tr>
+                </table>
+                <br>
+                <h3>Package Rate</h3>
+                <table>
+                    <tr>
+                        <td>Category</td>
+                        <td>Per Person (Min 2 Pax)</td>
+                        <td>Per Person (Min 4 Pax)</td>
+                        <td>Per Person (Min 6 Pax)</td>
+                        <td>Child Above 05 Yrs</td>
+                        <td>Extra Adult (Above 12 Yrs)</td>
+                    </tr>
+                    <tr>
+                        <td>Standard</td>
+                        <td>10,000</td>
+                        <td>9,000</td>
+                        <td>8,000</td>
+                        <td>4,000</td>
+                        <td>5,000</td>
+                    </tr>
+                    <tr>
+                        <td>Deluxe</td>
+                        <td>11,000</td>
+                        <td>10,000</td>
+                        <td>9,000</td>
+                        <td>5,000</td>
+                        <td>6,000</td>
+                    </tr>
+                    <tr>
+                        <td>Super Deluxe</td>
+                        <td>13,000</td>
+                        <td>12,000</td>
+                        <td>11,000</td>
+                        <td>6,000</td>
+                        <td>7,000</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>14,500</td>
+                        <td>13,500</td>
+                        <td>12,500</td>
+                        <td>7,000</td>
+                        <td>8,000</td>
+                    </tr>
+                </table>
+                <br>
+                <h3>The Above Cost Includes</h3>
+                <p>04 Nights accommodation on Twin Sharing / MAP (Breakfast and dinner) Basis on the above mentioned Hotels / HB. Private Non Ac Car for all Transfer and Sightseeing. 01 Hour Boat (Shikara) Ride on Dal Lake – Srinagar (04 Person to 01 Boat) <b>All applicable taxes GST Included</b>.</p>
+                <br>
+                <h3>Note: - (for Kashmir Tour Packages) Exclusion</h3>
+                <ul>
+                    <li>Rates are nett & including all taxes.</li>
+                    <li>Honeymoon Inclusions INR 1500/- Per Couple.</li>
+                    <li>Pahalgam. We can either arrange a vehicle or guest can pay directly on spot for trip to Aru, Chandanwari & Betaab valley supplement of INR 2500/- Per vehicle (08 Pax max to 01 Car). FYI our vehicle in Pahalgam can cover market & main area including Amusement park.</li>
+                    <li>Note for Sonamarg: Local sightseeing in Sonamarg is not included due to union restrictions so local attraction like Thajiwas Glacier can be done by ponies only (at direct pay basis). Another attraction is Zero point taking local cab from Sonamarg taxi union cost INR 4500/- FYI our vehicle in Sonamarg can roam around market place & main Sonamarg only.</li>
+                    <li>Note for Gulmarg: Cost for Gondola Cable Car, Gulmarg: INR 800/- Per Pax for Level 1 & INR 1000/- Per Pax for Level 2 (Total INR 1800/- for both). Guide mandatory for arranging tickets INR 1000/-</li>
+                    <li>If in case of heavy snowfall at Gulmarg, vehicles will not be able to reach Gulmarg due to heavy snow on road from Tangmarg (12 Kms before reaching Gulmarg) & as such, Snow jeep (Sumo / similar with chains on tyres) will be used. The supplement charges for same will be 2000/- nett for To & Fro (08 Pax max to 01 Car). Client can pay directly or you can ask us to include in package.</li>
+                </ul>
+                <br>
+                <div class="grid grid1">
+                    <div>
+                        <h3>Payment Policy</h3>
+                        <table>
+                            <tr>
+                                <td>30 Days or before for Travel</td>
+                                <td>25% on land package + Non Refundable component if any</td>
+                            </tr>
+                            <tr>
+                                <td>29 Days to 15 Days for Travel</td>
+                                <td>50% on land package + Non Refundable component if any</td>
+                            </tr>
+                            <tr>
+                                <td>Within 15 Days for Travel</td>
+                                <td>100% package cost</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h3>Cancelation Policy</h3>
+                        <table>
+                            <tr>
+                                <td>30 Days or before for Travel</td>
+                                <td>25% on land package + Non Refundable component if any</td>
+                            </tr>
+                            <tr>
+                                <td>29 Days to 15 Days for Travel</td>
+                                <td>50% on land package + Non Refundable component if any</td>
+                            </tr>
+                            <tr>
+                                <td>Within 15 Days for Travel</td>
+                                <td>Non Refundable</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <h2>Kashmir Trip: 5 Days of Paradise on Earth</h2>
+                <p>If you are travelling with the love of your life and want to have scenic beauty and romantic and thrilling moments, you should choose Kashmir. The simple way in which you plan your Kashmir package whether it is for a couple or an adventure with family the valley will provide everything from a snow-capped mountain to a pristine lake.</p>
+                <p>Find out the perfect Kashmir holiday packages for a blissful time via websites like VootHolidays and get exclusive deals and offers.</p>
+                <br>
+                <h2>Why Choose Kashmir for Your Next Holiday?</h2>
+                <p>For obvious reasons, Kashmir is considered to be a magical destination along with its enchanting landscapes, rich culture, and endless adventure opportunities.</p>
+                <p>Srinagar with the serene Dal Lake and the Tanjore of Srinagar is the same tale for every traveller, and the Putafi to the snowy peaks of Gulmarg is an experience of its own.</p>
+                <p>Kashmir packages for couples or families are available irrespective of whether you want to have a peaceful retreat or an action-packed getaway.</p>
+                <br>
+                <h2>5 Days in Kashmir: Day-Wise Travel Plan</h2>
+                <ul>
+                    <li><b>Day 1: </b>Arrive in Srinagar. Start the trip with a peaceful ride of Shikara over Dal Lake and Mughal Gardens like Nishat Bagh and Shalimar Bagh.</li>
+                    <li><b>Day 2: </b>Head towards Sonamarg. Trek to Thajiwas Glacier, take up river rafting or just soak all the time by staring in thought and enjoying the beautiful golden meadows and snowy peaks.</li>
+                    <li><b>Day 3: </b>Gulmarg, or the winter wonderland, travel here. Take a Gondola ride, enjoy skiing or admire the snow-covered landscape.</li>
+                    <li><b>Day 4: </b>Take only the soul of Pahalgam, where one becomes calm. Visit Betaab Valley, explore Aru Valley and take in the serenity of the surroundings next to the Lidder River.</li>
+                    <li><b>Day 5: </b>You can visit Shankaracharya Temple before departure on the final day or have a few hours in the local markets of Srinagar and the return is Rajbagh.</li>
+                </ul>
+                <p>This is a very scenic, relaxing and adventurous itinerary and is ideal for those, who want a perfect trip through Kashmir.</p>
+                <br>
+                <h2>Kashmir’s Top Attractions to Explore</h2>
+                <p><b>Srinagar: </b>Dal Lake in Srinagar is famous for visitors indulging in serene shikara rides in Dal Lake and the glorious sight of its houseboats. Any of the best Kashmir tour packages have to be seen.</p>
+                <p><b>Gulmarg: </b>Adventure buffs will surely find these thrilling snow activities exciting, but if Gulmarg is your plan for a day out, you can drop by Gulmarg Ski Resort.</p>
+                <p><b>Sonamarg: </b>If you wish to go for nature walks or trekking, then Sonamarg’s Meadows is referred to as the ‘Meadow of Gold.’</p>
+                <p><b>Pahalgam: </b>Betaab Valley, Aru Valley at Pahalgam is the place where you will step on the peaceful landscapes of Pahalgam and Lidder River.</p>
+                <br>
+                <h2>Why Choose VootHolidays for Your Kashmir Packages?</h2>
+                <p>While planning a holiday to Kashmir, VootHolidays provides a range of Kashmir holiday packages according to the needs of various types of travellers. For luxury adventure honeymoon retreats, VootHolidays assures you a hassle-free experience, and you will not regret it since it offers tailor-made options to try. Book Kashmir packages for a couple or family getaway of your lifetime even today.</p>
+                <br>
+                <h2>Perfect Seasons for Your Dream Vacation</h2>
+                <p>The perfect season to visit lies in your personal preference. The best months for such winter adventures, such as skiing or snowboarding, are the winter months of December to February. Chasing its winter wonder, you get to find yourself atop the Gulmarg and Sonamarg snow-covered landscapes.</p>
+                <p>Sightseeing during spring (March to May) is also the best time due to the pleasant weather and the Mughal gardens flourishing in full bloom with their colour. Many Kashmir travel packages are designed to highlight this beauty. The peak tourist time is summer (June to August), when, by otherwise very lush valleys, one can trek in ideal weather.</p>
+                <p>From September to November, autumn brings tranquil air, and the countryside is covered with golden leaves, which makes it the ideal season for those seeking seclusion.</p>
+                <p>The best Kashmir tour package provides an appropriate mixture of adventure, scenic outlook, and rest. Kashmir is best suited for either a couple looking for romance or for a family looking for adventure. VootHolidays offers Explore Kashmir packages for couples or other options that enable you to have an unforgettable journey through this paradise.</p>
+                <br>
+                <h2>FAQs</h2>
+                <h3>Where should one head, if one is seeking to cover the most visited places in Kashmir?</h3>
+                <p>Srinagar, Sonamarg, Gulmarg and Pahalgam are the popular tourist destinations in Kashmir. The sites appeal to those who wish to enjoy the natural beauty, adventure and cultural experiences.</p>
+                <h3>Is it possible to visit Kashmir for a honeymoon?</h3>
+                <p>Kashmir packages for couples are a great choice for a honeymoon. Beautiful landscapes, houseboats, and a serene location.</p>
+                <h3>How much money does one have to spend on a Kashmir trip?</h3>
+                <p>It always depends on your package. On average, it ranges from INR 20,000 to INR 50,000 and above.</p>
+                <h3>What is the best way to book a Kashmir tour package?</h3>
+                <p>Visit VootHolidays and find the best Kashmir holiday packages according to your requirements.</p>
+                <h3>Does Kashmir have any adventure activities?</h3>
+                <p>Many Kashmir travel packages consist of activities such as skiing in Gulmarg, trekking in Sonamarg and river rafting in Pahalgam.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <div class="flex gap2">
+            <a href="tel:+18004369330">
+                <h3><i class="fa-solid fa-phone"></i></h3>
+                <div>
+                    <h4><a href="tel:+919582828275">+91-9582828275</a></h4>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container newfooter">
+        <div class="row">
+            <div class="grid">
+                <div class="column">
+                    <a href="/"><img src="./images/footer-logo.png" alt=""></a>
+                    <br><br>
+                    <a target="_blank" href="https://www.facebook.com/vootholidays/"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://x.com/vootholidays"><i class="fa-brands fa-twitter"></i></a>
+                    <a target="_blank" href="http://instagram.com/vootholidays"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/vootholidays"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/Vootholidays"><i
+                            class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="column">
+                    <h4>LEGAL</h4>
+                    <p><a href="https://vootholidays.com/terms-condition">Terms & Conditions</a></p>
+                    <p><a href="https://vootholidays.com/privacy-policy">Privacy Policy</a></p>
+                    <p><a href="https://vootholidays.com/cookies-policy">Cookies Policy</a></p>
+                    <p><a href="https://vootholidays.com/cancellation-refund-policy">Cancellation & Refund</a></p>
+                </div>
+                <div class="column">
+                    <h4>Contact Us</h4>
+                    <p><b>Corporate Office</b></p>
+                    <p>Voot Holidays 206, Sai Complex, Nangloi, 110041, India</p>
+                </div>
+                <div class="column">
+                    <h4>Reach Us</h4>
+                    <a href="tel:+919582828275">
+                        <p><i class="fa-solid fa-phone-volume"></i> +91-9582828275</p>
+                    </a>
+                    <a href="mailto:support@vootholidays.com">
+                        <p><i class="fa-solid fa-at"></i> support@vootholidays.com</p>
+                    </a>
+                    <a href="mailto:info@vootholidays.com">
+                        <p><i class="fa-solid fa-envelope-open-text"></i> info@vootholidays.com</p>
+                    </a>
+                    <p>24 x 7 Support</p>
+                </div>
+            </div>
+            <hr style="border-color: var(--primary-color);">
+            <p style="font-size: 13px !important;line-height: 1.5;">*VootHoliday is a travel booking and comparison
+                website, where you can find thousands of deals and reservation offers. While looking for the cheap
+                flight ticket deals or the best destinations to explore the world. Flexibility is the key to success,
+                and manage your reservations with the best deals now. Compare the airfare on the top destination and
+                find great deals for the airline ticket booking.</p>
+        </div>
+        <hr style="margin: 0;">
+        <div style="text-align:center;">
+            <div class="foot">
+                <p>© 2025 VootHolidays. All rights Reserved. </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./css/file.js"></script>
+<script src="./css/slider.js"></script>
+
+</html>
